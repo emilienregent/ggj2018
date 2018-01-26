@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody playerRigidbody;
 
+    public GunController gun;
+
     // Use this for initialization
     void Start () {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -20,7 +22,12 @@ public class PlayerController : MonoBehaviour {
        
         if(Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("SPELL 1");
+            gun.isFiring = true;
+        }
+
+        if(Input.GetButtonUp("Fire1"))
+        {
+            gun.isFiring = false;
         }
 
         if(Input.GetButtonDown("Fire2"))

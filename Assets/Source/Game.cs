@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour 
 {
@@ -34,12 +35,20 @@ public class Game : MonoBehaviour
 
 		for (int i = 0; i < dungeons.Length; i++)
 		{
-			dungeons[i].game = this;
-            dungeons[i].playerCamera = cameras[i];
+            if(PlayerPrefs.HasKey("Player_" + (i + 1) + "_controller") == true)
+            {
 
+                dungeons[i].game = this;
+                dungeons[i].playerCamera = cameras[i];
 
-            dungeons[i].StartDungeon (players [i], cameras[i]);
-		}	
+                dungeons[i].StartDungeon (players [i], cameras[i]);
+            }
+            else
+            {
+                dungeons[i].gameObject.SetActive(false);
+                // cameras[i].gameObject.SetActive(false);
+            }
+        }	
 
 	}
 
@@ -52,7 +61,12 @@ public class Game : MonoBehaviour
 			player.Resurect (resurectDelay);
 		}
 		else
-			UnityEngine.Debug.Log ("Game Over");
+        {
+            UnityEngine.Debug.Log("Game Over");
+            // Go back to the menu scene
+            // TODO : Doing something better
+            SceneManager.LoadScene(0);
+        }
 	}
 	
 	// Update is called once per frame

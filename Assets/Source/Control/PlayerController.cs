@@ -71,11 +71,6 @@ public class PlayerController : MonoBehaviour, IFrequency {
         sfxAudioSource = GetComponent<AudioSource>();
         
         _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller");
-        if(_controllerId == 0)
-        {
-            _controllerId = playerId;
-            Debug.Log("No controller for this player, you give to him the controller corresponding to his playerId");
-        }
         Debug.Log("Player " + playerId + " use the controller " + _controllerId);
     }
 

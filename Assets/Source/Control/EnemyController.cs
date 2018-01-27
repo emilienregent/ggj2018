@@ -155,9 +155,9 @@ public class EnemyController : MonoBehaviour, IFrequency
                     _warpingDirection = direction;
 
                     // Set new player and teleport into new room
-                    _player = _player.dungeon.game.GetPlayer(dungeonId);
-                    _currentDungeonId = dungeonId;
-                    transform.position = newPosition;
+                    SetPlayer(_player.dungeon.game.GetPlayer(dungeonId));
+
+                    _agent.Warp(newPosition);
                     _agent.destination = _player.transform.position;
                 }
             }

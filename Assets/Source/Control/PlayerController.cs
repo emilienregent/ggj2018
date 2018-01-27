@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody playerRigidbody;
 
     public GunController gun;
+    public Camera playerCamera;
 
     // Use this for initialization
     void Start () {

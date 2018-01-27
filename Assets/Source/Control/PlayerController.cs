@@ -5,7 +5,19 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour, IFrequency {
     
-    public float moveSpeed = 15.0f;
+    private float defaultSpeed;
+    private float defaultAcceleration;
+    
+    public float maxDashTime = 1.0f;
+    public float dashStoppingSpeed = 0.1f;
+    public float dashSpeedMultiplicator = 4f;
+    public float dashAccelerationMultiplicator = 12f;
+    private float currentDashTime;
+    public Vector3 dashDirection = Vector3.zero;
+
+    public bool isDashing = false;
+    public bool canDash = true;
+
     public float triggerDeadZone = 0.5f;
     public float sightAngle = 25f;
     public int playerId;
@@ -36,6 +48,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
     private void Start () {
 		_agent = GetComponent<NavMeshAgent> ();
+        defaultSpeed = _agent.speed;
+        defaultAcceleration = _agent.acceleration;
 
         _kickDistanceSqr = kickDistance * kickDistance;
 
@@ -52,11 +66,33 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
     // Update is called once per frame
     private void Update () {
-        Move();
+
+        // MOVE
+        if(isDashing == false)
+        {
+            Move();
+        } else
+        {
+            UpdateDash();
+        }
+        
         Rotate();
        
+        // FIRE
         gun.isFiring = (Input.GetAxis("Player_" + playerId + "_Fire1") >= triggerDeadZone);
 
+        // DASH
+        if(Input.GetAxis("Player_" + playerId + "_Dash") >= triggerDeadZone && canDash)
+        {
+            Dash();
+        }
+
+        if(Input.GetAxis("Player_" + playerId + "_Dash") < triggerDeadZone && !isDashing && !canDash)
+        {
+            canDash = true;
+        }
+
+        // ACTIONS
         if(Input.GetButtonDown("Player_" + playerId + "_Fire2"))
         {
             List<Item> closeItems = GetInFrontItems();
@@ -97,6 +133,44 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	{
 		Vector3 heading = new Vector3(Input.GetAxis("Player_" + playerId + "_Horizontal"), 0, Input.GetAxis("Player_" + playerId + "_Vertical"));
 		_agent.destination = transform.position + heading.normalized;
+    }
+
+    // get input from the left stick for player movement
+    private void Dash() {
+        if(isDashing == false && canDash == true)
+        {
+            currentDashTime = 0.0f;
+            isDashing = true;
+            canDash = false;
+            dashDirection = new Vector3(Input.GetAxis("Player_" + playerId + "_Horizontal"), 0, Input.GetAxis("Player_" + playerId + "_Vertical"));
+           
+            _agent.speed *= dashSpeedMultiplicator;
+            _agent.acceleration *= dashAccelerationMultiplicator;
+            
+        }
+     
+    }
+
+    private void UpdateDash() {
+        if(isDashing == false) { return; }
+        if(currentDashTime < maxDashTime)
+        {
+            currentDashTime += dashStoppingSpeed;
+            _agent.destination = transform.position + dashDirection.normalized;
+        } else
+        {
+            resetSpeedAndAcceleration();
+
+        }
+        
+    }
+
+    private void resetSpeedAndAcceleration() {
+        _agent.velocity = Vector3.zero;
+        _agent.speed = defaultSpeed;
+        _agent.acceleration = defaultAcceleration;
+        isDashing = false;
+        dashDirection = Vector3.zero;
     }
 
     // get input from right stick for the player rotation

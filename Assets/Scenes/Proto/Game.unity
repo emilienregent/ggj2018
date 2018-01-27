@@ -1827,7 +1827,7 @@ MonoBehaviour:
   fullPoolHp: 400
   players:
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
-  - {fileID: 114641608237711344, guid: 18cba646296174ff08b485081c8915f9, type: 2}
+  - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
   dungeons:

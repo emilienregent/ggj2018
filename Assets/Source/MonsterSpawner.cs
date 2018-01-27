@@ -14,6 +14,10 @@ public class MonsterSpawner : MonoBehaviour, IFrequency
     private ParticleSystem _spawnFx = null;
 	public Frequency frequency { get; set; }
 
+	public float pourcentToSpawnBadFrequency = 0f;
+
+	private List<int> enemieFrequencies = new List<int>();
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -37,6 +41,9 @@ public class MonsterSpawner : MonoBehaviour, IFrequency
         this.frequency = frequency;
 
         colorBehaviour.SetFrequency(frequency);
+
+		enemieFrequencies = new List<int> () {1, 2, 4, 8};
+		enemieFrequencies.Remove ((int)frequency);
 	}
 
 	public void Spawn (PlayerController targetPlayer)
@@ -45,7 +52,23 @@ public class MonsterSpawner : MonoBehaviour, IFrequency
 		EnemyController enemyController = GameObject.Instantiate<EnemyController>(spawns [Random.Range (0, spawns.Length)], transform.position, Quaternion.identity);
 		enemyController.SetPlayer (targetPlayer);
 		enemyController.SetRoomSpawner (_roomSpawner);
-		enemyController.frequency = frequency;
+
+		float rand = Random.Range (0f, 100f);
+
+		if (rand < pourcentToSpawnBadFrequency)
+		{
+			enemyController.frequency = (Frequency) enemieFrequencies [ Random.Range( 0, enemieFrequencies.Count)];			
+		}
+		else
+		{
+			enemyController.frequency = frequency;
+		}
+
+		ColorBehaviour[] colors = enemyController.GetComponentsInChildren<ColorBehaviour> ();
+		for (int i = 0; i < colors.Length; i++)
+		{
+			colors [i].SetFrequency (enemyController.frequency);
+		}
 
         ParticleSystem _spawnFx = GameObject.Instantiate<ParticleSystem>(spawnFxPrefab, transform.position, Quaternion.identity);
 

@@ -321,6 +321,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  fullHp: 30
   dmg: 5
   hitFrequency: 0.5
   distanceToAttack: 10

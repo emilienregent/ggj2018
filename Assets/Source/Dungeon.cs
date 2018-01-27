@@ -46,6 +46,7 @@ public class Dungeon : MonoBehaviour , IFrequency{
 			roomSpawners [i].frequency = frequency;
             roomSpawners[i].StartRoom();
 		}
+        game.registerPlayer(playerController);
 	}
 
 

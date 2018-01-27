@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 	public float fullHp = 0f;
 	private float _hp = 0f;
+    public float hp { get { return _hp; }  }
+
 	private NavMeshAgent _agent = null;
 
 	public Frequency frequency { get; set; }
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	public float normalSpeed = 0f;
 	public float deadSpeed = 0f;
 
+	public float damage = 0f;
     public Animator animControl;
 
     // Use this for initialization
@@ -65,6 +68,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
         _kickDistanceSqr = kickDistance * kickDistance;
 
 		_hp = fullHp;
+     
 
         // Get the camera offset
         cameraOffset = playerCamera.transform.position - transform.position;
@@ -75,6 +79,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 		gun.gunOriginCamera = playerCamera;
 		gun.gunFrequency = frequency;
+		gun.bulletDamage = damage;
     }
 
     // Update is called once per frame
@@ -148,7 +153,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     private void Move() 
 	{
 		Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
-		//_agent.destination = transform.position + heading.normalized;
+		_agent.destination = transform.position + heading.normalized;
         if(Input.GetAxis("Player_" + _controllerId + "_Horizontal") != 0 || Input.GetAxis("Player_" + _controllerId + "_Vertical") != 0)
         {
             animControl.SetTrigger("Player_Run_Idle");
@@ -304,6 +309,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	public void Hit (float dmg)
 	{
 		_hp -= dmg;
+    
 
 		if (_hp <= 0f)
 		{

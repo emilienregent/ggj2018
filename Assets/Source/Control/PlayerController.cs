@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	public float deadSpeed = 0f;
 
 	public float damage = 0f;
+    public Animator animControl;
 
     // Use this for initialization
 
@@ -121,7 +122,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
             Kick();
 
             // /!\ TODO : Made generic area detection/kick /!\ 
-            List<Item> closeItems = GetInFrontItems();
+            List<Item> closeItems = GetInFrontElements<Item>("item");
             if(closeItems.Count > 0)
             {
                 Item frontItem = GetInFrontItems()[0];
@@ -149,7 +150,14 @@ public class PlayerController : MonoBehaviour, IFrequency {
     private void Move() 
 	{
 		Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
-		_agent.destination = transform.position + heading.normalized;
+		//_agent.destination = transform.position + heading.normalized;
+        if(Input.GetAxis("Player_" + _controllerId + "_Horizontal") != 0 || Input.GetAxis("Player_" + _controllerId + "_Vertical") != 0)
+        {
+            animControl.SetTrigger("Player_Run_Idle");
+        } else
+        {
+            animControl.SetTrigger("Player_Idle");
+        }
     }
 
     // get input from the left stick for player movement
@@ -200,7 +208,9 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
     private void Kick()
     {
-        List<EnemyController> closeEnemies = GetCloseEnemies();
+        List<EnemyController> closeEnemies = GetInFrontElements<EnemyController>("monster");
+
+        animControl.SetTrigger("Player_Kick");
 
         for (int i = 0; i < closeEnemies.Count; ++i)
         {
@@ -223,31 +233,15 @@ public class PlayerController : MonoBehaviour, IFrequency {
         sfxAudioSource.Play();
     }
 
-    private List<EnemyController> GetCloseEnemies()
-    {   
-        List<EnemyController> closeEnemies = new List<EnemyController>();
-
-        for (int i = 0; i < _enemies.Count; ++i)
-        {
-            Vector3 offset = transform.position - _enemies[i].transform.position;
-            float   sqrLen = offset.sqrMagnitude;
-
-            if (sqrLen < _kickDistanceSqr)
-                closeEnemies.Add(_enemies[i]);
-        }
-
-        return closeEnemies;
-    }
-
     private List<Item> GetInFrontItems() {
         Collider[] hitColliders = Physics.OverlapSphere(new Vector3(transform.position.x, 2.5f, transform.position.z), kickDistance);
+
         List<Item> closeItems = new List<Item>();
+
         for(int i = 0; i < hitColliders.Length; i++)
         {
             if(hitColliders[i].tag == "item")
             {
-              
-
                 Vector3 directionToTarget = hitColliders[i].transform.position - transform.position;
                 float angle = Vector3.Angle(Quaternion.AngleAxis(-0.5f * sightAngle, transform.up) * transform.forward, directionToTarget);
                 float distance = directionToTarget.magnitude;
@@ -260,6 +254,29 @@ public class PlayerController : MonoBehaviour, IFrequency {
         }
 
         return closeItems;
+    }
+
+    private List<T> GetInFrontElements<T>(string tag) {
+        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(transform.position.x, 2.5f, transform.position.z), kickDistance);
+
+        List<T> closeElements = new List<T>();
+
+        for(int i = 0; i < hitColliders.Length; i++)
+        {
+            if(hitColliders[i].tag == tag)
+            {
+                Vector3 directionToTarget = hitColliders[i].transform.position - transform.position;
+                float angle = Vector3.Angle(Quaternion.AngleAxis(-0.5f * sightAngle, transform.up) * transform.forward, directionToTarget);
+                float distance = directionToTarget.magnitude;
+
+                if(Mathf.Abs(angle) < sightAngle && distance > transform.localScale.x)
+                {
+                    closeElements.Add(hitColliders[i].GetComponent<T>());
+                }
+            }
+        }
+
+        return closeElements;
     }
 
     public void AddEnemy(EnemyController enemy)

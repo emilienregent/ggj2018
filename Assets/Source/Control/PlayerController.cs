@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 	public float fullHp = 0f;
 	private float _hp = 0f;
+    public float hp { get { return _hp; }  }
+
 	private NavMeshAgent _agent = null;
 
 	public Frequency frequency { get; set; }
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
         _kickDistanceSqr = kickDistance * kickDistance;
 
 		_hp = fullHp;
+     
 
         // Get the camera offset
         cameraOffset = playerCamera.transform.position - transform.position;
@@ -286,6 +289,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	public void Hit (float dmg)
 	{
 		_hp -= dmg;
+    
 
 		if (_hp <= 0f)
 		{

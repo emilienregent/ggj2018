@@ -28,6 +28,7 @@ public class Game : MonoBehaviour
 	public PlayerController[] players = null;
 	public Dungeon[] dungeons = null;
     public Camera[] cameras = null;
+    public UI_Control ui_control;
 
     private void Awake()
     {
@@ -104,6 +105,11 @@ public class Game : MonoBehaviour
 
         return DirectionEnum.NONE;
     }
+    public void registerPlayer(PlayerController Player)
+    {
+        ui_control.registerPlayer(Player);
+    }
+
 
     public int GetDungeonId(int currentDungeonId, DirectionEnum direction)
     {

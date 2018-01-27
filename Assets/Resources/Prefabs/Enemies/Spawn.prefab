@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4872312365157926}
   - component: {fileID: 114118719125596180}
   m_Layer: 0
-  m_Name: Room1SpawnBig
+  m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +361,6 @@ MonoBehaviour:
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
   spawnDate: 0
-  _spawnFx: {fileID: 0}
 --- !u!114 &114310540393211494
 MonoBehaviour:
   m_ObjectHideFlags: 1

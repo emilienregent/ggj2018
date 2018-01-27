@@ -12,7 +12,7 @@ public class GunController : MonoBehaviour {
 
     private GameObject player;
 
-    public Transform firePoint;
+    public Transform[] firePoint;
 
     public Stack<BulletController> inactiveBullets = new Stack<BulletController>();
     public List<BulletController> activeBullets = new List<BulletController>();
@@ -30,7 +30,7 @@ public class GunController : MonoBehaviour {
 
         for(int i = 0; i < startingBullets; i++)
         {
-            BulletController newBullet = InstantiateNewBullet(bullet, gunFrequency, firePoint.position, firePoint.rotation);
+            BulletController newBullet = InstantiateNewBullet(bullet, gunFrequency, firePoint[0].position, firePoint[0].rotation);
 
             newBullet.initParentGun(this);
             newBullet.gameObject.SetActive(false);
@@ -57,8 +57,14 @@ public class GunController : MonoBehaviour {
 
 	public void Shoot()
 	{
-		BulletController newBullet = ActiveBullet();
-		newBullet.originCamera = gunOriginCamera;
+		for (int i = 0; i < firePoint.Length; i++)
+		{
+			BulletController newBullet = ActiveBullet ();
+			newBullet.originCamera = gunOriginCamera;
+
+			newBullet.transform.position = firePoint [i].position;
+			newBullet.transform.rotation = firePoint [i].rotation;
+		}
 	}
 
 	public BulletController InstantiateNewBullet (BulletController prefab, Frequency frequency, Vector3 position, Quaternion rotation)
@@ -82,12 +88,12 @@ public class GunController : MonoBehaviour {
         {
             newBullet = inactiveBullets.Pop();
             newBullet.gameObject.SetActive(true);
-            newBullet.transform.position = firePoint.position;
-            newBullet.transform.rotation = firePoint.rotation;
+            newBullet.transform.position = firePoint[0].position;
+            newBullet.transform.rotation = firePoint[0].rotation;
             activeBullets.Add(newBullet);
         } else
         {
-			newBullet = InstantiateNewBullet(bullet, gunFrequency, firePoint.position, firePoint.rotation);
+			newBullet = InstantiateNewBullet(bullet, gunFrequency, firePoint[0].position, firePoint[0].rotation);
             newBullet.initParentGun(this);
             newBullet.name = player.name + "_bullet_" + activeBullets.Count;
             activeBullets.Add(newBullet);

@@ -325,9 +325,13 @@ MonoBehaviour:
   isFiring: 0
   bullet: {fileID: 114851237012570376, guid: ef1739343a6901b488fe1ed3cd689019, type: 2}
   timeBetweenShot: 5
-  firePoint: {fileID: 4893981436715312}
+  firePoint:
+  - {fileID: 4893981436715312}
   activeBullets: []
   startingBullets: 0
+  gunFrequency: 0
+  gunOriginCamera: {fileID: 0}
+  bulletDamage: 0
 --- !u!114 &114641608237711344
 MonoBehaviour:
   m_ObjectHideFlags: 1

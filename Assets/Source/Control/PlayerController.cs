@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour {
     
@@ -23,10 +24,13 @@ public class PlayerController : MonoBehaviour {
 
 	public float fullHp = 0f;
 	private float _hp = 0f;
+	private NavMeshAgent _agent = null;
 
     // Use this for initialization
 
     private void Start () {
+		_agent = GetComponent<NavMeshAgent> ();
+
         _kickDistanceSqr = kickDistance * kickDistance;
 
         // TOOO : Remove as soon as we have an enemy spawner
@@ -65,13 +69,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     // get input from the left stick for player movement
-    private void Move() {
-        Vector3 heading = new Vector3(Input.GetAxis("Player_" + playerId + "_Horizontal") * moveSpeed * Time.deltaTime, 0, Input.GetAxis("Player_" + playerId + "_Vertical") * moveSpeed * Time.deltaTime);
-        if(heading != Vector3.zero)
-        {
-            float distance = heading.magnitude;
-            transform.position += heading / distance * moveSpeed * Time.deltaTime;
-        }
+    private void Move() 
+	{
+		Vector3 heading = new Vector3(Input.GetAxis("Player_" + playerId + "_Horizontal"), 0, Input.GetAxis("Player_" + playerId + "_Vertical"));
+		_agent.destination = transform.position + heading.normalized;
     }
 
     // get input from right stick for the player rotation

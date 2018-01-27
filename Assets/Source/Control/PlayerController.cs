@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	public float normalSpeed = 0f;
 	public float deadSpeed = 0f;
 
+	public float damage = 0f;
+
     // Use this for initialization
 
     private void Start () {
@@ -73,6 +75,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 		gun.gunOriginCamera = playerCamera;
 		gun.gunFrequency = frequency;
+		gun.bulletDamage = damage;
     }
 
     // Update is called once per frame

@@ -172,7 +172,15 @@ public class Game : MonoBehaviour
         float y = direction == DirectionEnum.UP || direction == DirectionEnum.DOWN ? 0f :
             currentDungeonId > 2 ? (viewPos.x - 1) * halfHeight : viewPos.x * halfHeight;
 
+        float angle = 
+            direction == DirectionEnum.LEFT ? -90f :
+            direction == DirectionEnum.RIGHT ? 90f :
+            direction == DirectionEnum.UP ? 180f :
+            0f;
+            
+
         entryFx.transform.position = new Vector2(x, y);
+        entryFx.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         entryFx.transform.SetParent(canvas.transform, false);
     }
 }

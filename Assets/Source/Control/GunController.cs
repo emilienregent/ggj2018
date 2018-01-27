@@ -10,13 +10,16 @@ public class GunController : MonoBehaviour {
     public float timeBetweenShot;
     private float shotCounter;
 
-    public Transform firePoint;
+    private GameObject player;
 
+    public Transform firePoint;
 
     // Use this for initialization
     private void Start () {
-		
-	}
+
+        player = transform.root.gameObject;
+
+    }
 
     // Update is called once per frame
     private void Update () {
@@ -26,7 +29,8 @@ public class GunController : MonoBehaviour {
             if(shotCounter <= 0)
             {
                 shotCounter = timeBetweenShot;
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                newBullet.originPlayer = player.GetComponent<PlayerController>();
             }
         } else
         {

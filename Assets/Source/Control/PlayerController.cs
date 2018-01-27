@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     private EnemyController[]    _enemies = null;
 
     public GunController gun;
+    public Camera playerCamera;
 
     // Use this for initialization
 

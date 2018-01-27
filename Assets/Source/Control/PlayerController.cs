@@ -207,6 +207,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
             Vector3 direction = heading / distance;
 
             closeEnemies[i].Kick(direction, strengh);
+
+            break;
         }
 
         if(closeEnemies.Count > 0)

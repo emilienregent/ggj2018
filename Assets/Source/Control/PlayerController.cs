@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     
     public float moveSpeed = 15.0f;
+    public float triggerDeadZone = 0.5f;
     
     public int playerId;
     public  float                strengh = 10f;   
@@ -12,8 +13,13 @@ public class PlayerController : MonoBehaviour {
     private float                _kickDistanceSqr = 0f;
     private EnemyController[]    _enemies = null;
 
+    public  AudioClip   sfxKickSuccess;
+    public  AudioClip   sfxKickFail;
+    private AudioSource sfxAudioSource;
+
     public GunController gun;
     public Camera playerCamera;
+    private Vector3 cameraOffset;
 
 	public float fullHp = 0f;
 	private float _hp = 0f;
@@ -25,23 +31,21 @@ public class PlayerController : MonoBehaviour {
 
         // TOOO : Remove as soon as we have an enemy spawner
         _enemies = FindObjectsOfType<EnemyController>() as EnemyController[];
+
 		_hp = fullHp;
-	}
+
+        // Get the camera offset
+        cameraOffset = playerCamera.transform.position - transform.position;
+        // Sound
+        sfxAudioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     private void Update () {
         Move();
         Rotate();
-       
-        if(Input.GetButtonDown("Player_"+playerId+"_Fire1"))
-        {
-            gun.isFiring = true;
-        }
-
-        if(Input.GetButtonUp("Player_" + playerId + "_Fire1"))
-        {
-            gun.isFiring = false;
-        }
+        
+        gun.isFiring = (Input.GetAxis("Player_" + playerId + "_Fire1") >= triggerDeadZone);
 
         if(Input.GetButtonDown("Player_" + playerId + "_Fire2"))
         {
@@ -53,6 +57,11 @@ public class PlayerController : MonoBehaviour {
             Kick();
         }
 
+    }
+
+    private void LateUpdate()
+    {
+        playerCamera.transform.position = transform.position + cameraOffset;
     }
 
     // get input from the left stick for player movement
@@ -86,6 +95,15 @@ public class PlayerController : MonoBehaviour {
 
             closeEnemies[i].Kick(direction, strengh);
         }
+
+        if(closeEnemies.Count > 0)
+        {
+            sfxAudioSource.clip = sfxKickSuccess;
+        } else
+        {
+            sfxAudioSource.clip = sfxKickFail;
+        }
+        sfxAudioSource.Play();
     }
 
     private List<EnemyController> GetCloseEnemies()

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     
     public float moveSpeed = 15.0f;
+    public float triggerDeadZone = 0.5f;
     
     public int playerId;
     public  float                strengh = 10f;   
@@ -32,16 +33,8 @@ public class PlayerController : MonoBehaviour {
     private void Update () {
         Move();
         Rotate();
-       
-        if(Input.GetButtonDown("Player_"+playerId+"_Fire1"))
-        {
-            gun.isFiring = true;
-        }
-
-        if(Input.GetButtonUp("Player_" + playerId + "_Fire1"))
-        {
-            gun.isFiring = false;
-        }
+        
+        gun.isFiring = (Input.GetAxis("Player_" + playerId + "_Fire1") >= triggerDeadZone);
 
         if(Input.GetButtonDown("Player_" + playerId + "_Fire2"))
         {

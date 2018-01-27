@@ -7,6 +7,13 @@ public class BulletController : MonoBehaviour {
     public float speed = 5.0f;
     public PlayerController originPlayer;
 
+    private GunController parentGun;
+
+    //public BulletController(GunController gun) {
+    public void initParentGun(GunController gun) { 
+        parentGun = gun;
+    }
+
     // Use this for initialization
     private void Start () {
 		
@@ -18,7 +25,7 @@ public class BulletController : MonoBehaviour {
         Vector3 viewPos = originPlayer.playerCamera.WorldToViewportPoint(transform.position);
         if(viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
         {
-            Destroy(gameObject);
+            parentGun.DisableBullet(this);
         }
     }
 

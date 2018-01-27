@@ -93,6 +93,8 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 			waypointIndex = index;
 		}
 
+        UnityEngine.Assertions.Assert.IsTrue(patrolPath.Length > waypointIndex, "Waypoint " + waypointIndex + " doesn't exist in patrol path for Room Spawner " + this);
+
 		return patrolPath [waypointIndex];
 	}
 

@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 347969540}
   - component: {fileID: 347969539}
   m_Layer: 5
-  m_Name: 'PressButtonA #4'
+  m_Name: 'PressButtonA #3'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ RectTransform:
   m_Children:
   - {fileID: 1232817817}
   m_Father: {fileID: 1141816126}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -570,8 +570,8 @@ MonoBehaviour:
   pressAButtonLabels:
   - {fileID: 1605333807}
   - {fileID: 761771928}
-  - {fileID: 1191102820}
   - {fileID: 347969540}
+  - {fileID: 1191102820}
 --- !u!4 &793141455
 Transform:
   m_ObjectHideFlags: 0
@@ -801,8 +801,8 @@ RectTransform:
   - {fileID: 204725745}
   - {fileID: 1605333805}
   - {fileID: 761771926}
-  - {fileID: 1191102818}
   - {fileID: 347969538}
+  - {fileID: 1191102818}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 1191102820}
   - component: {fileID: 1191102819}
   m_Layer: 5
-  m_Name: 'PressButtonA #3'
+  m_Name: 'PressButtonA #4'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1060,7 +1060,7 @@ RectTransform:
   m_Children:
   - {fileID: 1190174696}
   m_Father: {fileID: 1141816126}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

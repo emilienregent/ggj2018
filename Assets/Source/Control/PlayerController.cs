@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour {
     private float                _kickDistanceSqr = 0f;
     private EnemyController[]    _enemies = null;
 
+    public  AudioClip   sfxKickSuccess;
+    public  AudioClip   sfxKickFail;
+    private AudioSource sfxAudioSource;
+
     public GunController gun;
     public Camera playerCamera;
     private Vector3 cameraOffset;
@@ -27,7 +31,11 @@ public class PlayerController : MonoBehaviour {
 
         // Get the camera offset
         cameraOffset = playerCamera.transform.position - transform.position;
-	}
+
+        // Sound
+        sfxAudioSource = GetComponent<AudioSource>();
+
+    }
 
     // Update is called once per frame
     private void Update () {
@@ -84,6 +92,15 @@ public class PlayerController : MonoBehaviour {
 
             closeEnemies[i].Kick(direction, strengh);
         }
+
+        if(closeEnemies.Count > 0)
+        {
+            sfxAudioSource.clip = sfxKickSuccess;
+        } else
+        {
+            sfxAudioSource.clip = sfxKickFail;
+        }
+        sfxAudioSource.Play();
     }
 
     private List<EnemyController> GetCloseEnemies()

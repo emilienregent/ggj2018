@@ -38,12 +38,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Insects_Nest_Eggs
-    second: {fileID: 2100000, guid: 051c4ed5724e4b94ca78fb207b35305d, type: 2}
+    second: {fileID: 2100000, guid: ebea61340b8712f42a98b83f58a39325, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Insects_Nest_EggsBlob
-    second: {fileID: 2100000, guid: 051c4ed5724e4b94ca78fb207b35305d, type: 2}
+    second: {fileID: 2100000, guid: 0e5d4b942c27c9543a3b563747865514, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

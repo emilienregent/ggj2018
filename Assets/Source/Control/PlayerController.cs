@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     
     public float moveSpeed = 15.0f;
-
-    private Rigidbody playerRigidbody;
     
     public int playerId;
     public  float                strengh = 10f;   
@@ -20,7 +18,6 @@ public class PlayerController : MonoBehaviour {
 
     private void Start () {
         _kickDistanceSqr = kickDistance * kickDistance;
-        playerRigidbody = GetComponent<Rigidbody>();
 
         // TOOO : Remove as soon as we have an enemy spawner
         _enemies = FindObjectsOfType<EnemyController>() as EnemyController[];
@@ -55,10 +52,12 @@ public class PlayerController : MonoBehaviour {
 
     // get input from the left stick for player movement
     private void Move() {
-        
-        Vector3 moveInput = new Vector3(Input.GetAxis("Player_" + playerId + "_Horizontal"), 0, Input.GetAxis("Player_" + playerId + "_Vertical"));
-        Vector3 moveVelocity = moveInput * moveSpeed;
-        playerRigidbody.velocity = moveVelocity;
+        Vector3 heading = new Vector3(Input.GetAxis("Player_" + playerId + "_Horizontal") * moveSpeed * Time.deltaTime, 0, Input.GetAxis("Player_" + playerId + "_Vertical") * moveSpeed * Time.deltaTime);
+        if(heading != Vector3.zero)
+        {
+            float distance = heading.magnitude;
+            transform.position += heading / distance * moveSpeed * Time.deltaTime;
+        }
     }
 
     // get input from right stick for the player rotation

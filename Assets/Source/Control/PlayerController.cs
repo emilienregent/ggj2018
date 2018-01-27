@@ -21,10 +21,11 @@ public class PlayerController : MonoBehaviour, IFrequency {
     public float triggerDeadZone = 0.5f;
     public float sightAngle = 25f;
     public int playerId;
-    public  float                strengh = 10f;   
-    public  float                kickDistance = 2f;
-    private float                _kickDistanceSqr = 0f;
-    private EnemyController[]    _enemies = null;
+
+    public  float                   strengh = 10f;   
+    public  float                   kickDistance = 2f;
+    private float                   _kickDistanceSqr = 0f;
+    private List<EnemyController>   _enemies = new List<EnemyController>();
     private int                  _controllerId;
 
     public  AudioClip   sfxKickSuccess;
@@ -53,9 +54,6 @@ public class PlayerController : MonoBehaviour, IFrequency {
         defaultAcceleration = _agent.acceleration;
 
         _kickDistanceSqr = kickDistance * kickDistance;
-
-        // TOOO : Remove as soon as we have an enemy spawner
-        _enemies = FindObjectsOfType<EnemyController>() as EnemyController[];
 
 		_hp = fullHp;
 
@@ -218,7 +216,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     {   
         List<EnemyController> closeEnemies = new List<EnemyController>();
 
-        for (int i = 0; i < _enemies.Length; ++i)
+        for (int i = 0; i < _enemies.Count; ++i)
         {
             Vector3 offset = transform.position - _enemies[i].transform.position;
             float   sqrLen = offset.sqrMagnitude;
@@ -251,6 +249,18 @@ public class PlayerController : MonoBehaviour, IFrequency {
         }
 
         return closeItems;
+    }
+
+    public void AddEnemy(EnemyController enemy)
+    {
+        UnityEngine.Assertions.Assert.IsTrue(_enemies.Contains(enemy) == false, "Player " + playerId + " already know enemy " + enemy);
+        _enemies.Add(enemy);
+    }
+
+    public void RemoveEnemy(EnemyController enemy)
+    {
+        UnityEngine.Assertions.Assert.IsTrue(_enemies.Contains(enemy) == true, "Can't fin enemy " + enemy + " for player " + playerId);
+        _enemies.Remove(enemy);
     }
 
     private void OnDrawGizmos() 

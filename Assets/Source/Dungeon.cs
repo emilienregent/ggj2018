@@ -51,7 +51,7 @@ public class Dungeon : MonoBehaviour , IFrequency{
 	public void PlayerDead ()
 	{
 		Debug.Log ("player " + playerController.playerId + " is dead at " + Time.realtimeSinceStartup);
-		//game.PlayerDead (playerController);
+		game.PlayerDead (playerController);
 	}
 	
 	// Update is called once per frame

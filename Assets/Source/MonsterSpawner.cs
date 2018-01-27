@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class MonsterSpawner : MonoBehaviour, IFrequency
 {
+    public ColorBehaviour colorBehaviour = null;
 	public EnemyController[] spawns = null;
 	public float spawnDate = 0f;
 
@@ -22,9 +23,12 @@ public class MonsterSpawner : MonoBehaviour, IFrequency
 		
 	}
 
-	public void SetRoomSpawner (RoomSpawner roomSpawner)
+    public void SetRoomSpawner (RoomSpawner roomSpawner, Frequency frequency)
 	{
 		_roomSpawner = roomSpawner;
+        this.frequency = frequency;
+
+        colorBehaviour.SetFrequency(frequency);
 	}
 
 	public void Spawn (PlayerController targetPlayer)

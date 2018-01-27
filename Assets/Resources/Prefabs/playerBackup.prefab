@@ -349,7 +349,7 @@ MonoBehaviour:
   triggerDeadZone: 0.5
   sightAngle: 25
   playerId: 1
-  strengh: 10
+  strengh: 15
   kickDistance: 2
   sfxKickSuccess: {fileID: 8300000, guid: c3003551c2cf3984c8b4c357287ec718, type: 3}
   sfxKickFail: {fileID: 8300000, guid: d18502014c8c51644a8ee98c5620c7cb, type: 3}

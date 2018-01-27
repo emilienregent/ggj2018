@@ -26,6 +26,15 @@ public class GunController : MonoBehaviour {
         for(int i = 0; i < startingBullets; i++)
         {
             BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+
+			Frequency frequency = player.GetComponent<PlayerController> ().frequency;
+
+			ColorBehaviour[] colors= newBullet.GetComponentsInChildren<ColorBehaviour> ();
+			for (int j = 0; j < colors.Length; j++)
+			{
+				colors [j].SetFrequency (frequency);
+			}
+
             newBullet.initParentGun(this);
             newBullet.gameObject.SetActive(false);
             newBullet.name = player.name + "_bullet_" + i;

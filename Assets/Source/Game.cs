@@ -100,18 +100,18 @@ public class Game : MonoBehaviour
 
         UnityEngine.Debug.Log("Change position from room #" + currentPosition + " to room #" + newPosition);*/
 
-        Vector3 currentOffset = currentPosition - players[currentDungeonId - 1].transform.position;
+        Vector3 currentOffset = currentPosition - dungeons[currentDungeonId - 1].playerController.transform.position;
         Vector3 nextOffset = 
             direction == DirectionEnum.UP ? new Vector3(currentOffset.x, -currentOffset.y, -currentOffset.z + LINE_SIZE + 5f) : 
             direction == DirectionEnum.DOWN ? new Vector3(currentOffset.x, -currentOffset.y, -currentOffset.z + LINE_SIZE) : 
             direction == DirectionEnum.RIGHT ? new Vector3(-currentOffset.x + LINE_SIZE + 1.5f, currentOffset.y, currentOffset.z) : 
             new Vector3(-currentOffset.x + LINE_SIZE -1.5f, currentOffset.y, currentOffset.z);
 
-        return players[nextDungeonId - 1].transform.position + nextOffset;
+        return dungeons[nextDungeonId - 1].playerController.transform.position + nextOffset;
     }
 
-    public PlayerController GetPlayer(int currentDungeonId)
+    public PlayerController GetPlayer(int dungeonId)
     {
-        return dungeons[currentDungeonId - 1].playerController;
+        return dungeons[dungeonId - 1].playerController;
     }
 }

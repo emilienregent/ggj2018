@@ -7,12 +7,11 @@ public class EnemyController : MonoBehaviour, IFrequency
 {
     private const float INITIAL_SPEED = 5f;
 
-    [SerializeField] private PlayerController   _player = null;
-    [SerializeField] private RoomManager        _roomManager = null;
+    private PlayerController   _player = null;
     [SerializeField] private float              _weight = 1f;
     [SerializeField] private AnimationCurve     _speedCurve = new AnimationCurve();
 
-    public int currentRoomId = 1;
+    private int _currentDungeonId = 0;
 
     private bool _isKicked = false;
     private bool _isMoving = false;
@@ -47,7 +46,17 @@ public class EnemyController : MonoBehaviour, IFrequency
 
 	public void SetPlayer (PlayerController playerController)
 	{
+        if (_player != null)
+        {
+            _player.RemoveEnemy(this);
+        }
+
 		_player = playerController;
+        _player.AddEnemy(this);
+
+        _currentDungeonId = _player.dungeon.id;
+
+        //UnityEngine.Debug.Log("Spawn enemy " + this + " for player " + _player.playerId + " for dungeon " + _player.dungeon);
 	}
 
 	public void SetRoomSpawner (RoomSpawner roomSpawner)
@@ -57,6 +66,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 
     public void Kick(Vector3 direction, float strengh)
     {
+        //UnityEngine.Debug.Log("Kicked by player " + _player.playerId + " in dungeon " + _player.dungeon);
         _direction  = direction;
         _kickSpeed  = strengh / _weight;
         _isKicked   = true;
@@ -76,9 +86,15 @@ public class EnemyController : MonoBehaviour, IFrequency
 
         if (_isKicked == true)
         {
-            DirectionEnum direction = _roomManager.GetDirection(currentRoomId, transform.position);
+            if (_player.dungeon == null)
+            {
+                UnityEngine.Assertions.Assert.IsNotNull(_player, "Player is null when kicking enemy " + this);
+                UnityEngine.Assertions.Assert.IsNotNull(_player.dungeon, "Player " + _player.playerId + " doesn't have a dungeon when kicking enemy " + this);
+                UnityEngine.Assertions.Assert.IsNotNull(_player.dungeon.game, "Dungeon " + _player.dungeon.id + " doesn't have a game reference when kicking enemy " + this);
+            }
+            DirectionEnum direction = _player.dungeon.game.GetDirection(_currentDungeonId, transform.position);
 
-            if (_roomManager.IsAvailableDirection(currentRoomId, direction) == false)
+            if (_player.dungeon.game.IsAvailableDirection(_currentDungeonId, direction) == false)
             {
                 StopKick();
             }
@@ -90,16 +106,16 @@ public class EnemyController : MonoBehaviour, IFrequency
                 }
                 else if (_isWarping == false && direction != DirectionEnum.NONE)
                 {
-                    int roomId = _roomManager.GetRoomId(currentRoomId, direction);
-                    Vector3 newPosition = _roomManager.GetPosition(transform.position, direction, currentRoomId, roomId);
+                    int dungeonId = _player.dungeon.game.GetDungeonId(_currentDungeonId, direction);
+                    Vector3 newPosition = _player.dungeon.game.GetPosition(transform.position, direction, _currentDungeonId, dungeonId);
 
                     // Froze warping direction
                     _isWarping = true;
                     _warpingDirection = direction;
 
                     // Set new player and teleport into new room
-                    _player = _roomManager.GetPlayer(roomId);
-                    currentRoomId = roomId;
+                    _player = _player.dungeon.game.GetPlayer(dungeonId);
+                    _currentDungeonId = dungeonId;
                     transform.position = newPosition;
                     _agent.destination = _player.transform.position;
                 }
@@ -154,6 +170,11 @@ public class EnemyController : MonoBehaviour, IFrequency
 
 	public void HitByBullet (BulletController bullet)
 	{
+        if (_player != null)
+        {
+            _player.RemoveEnemy(this);
+        }
+
 		_roomSpawner.MonsterKill (this);
 		GameObject.Destroy (this.gameObject);
 	}
@@ -177,7 +198,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 
     private void StopKick()
     {
-        UnityEngine.Debug.Log("Stop kick ");
+        //UnityEngine.Debug.Log("Stop kick ");
 
         // Reset speed
         _speed      = INITIAL_SPEED / _weight;

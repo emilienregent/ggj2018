@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
     private void Start () {
 		_agent = GetComponent<NavMeshAgent> ();
+        _agent.updateRotation = false;
         defaultSpeed = _agent.speed;
         defaultAcceleration = _agent.acceleration;
 
@@ -185,7 +186,6 @@ public class PlayerController : MonoBehaviour, IFrequency {
     }
 
     private void resetSpeedAndAcceleration() {
-        _agent.velocity = Vector3.zero;
         _agent.speed = defaultSpeed;
         _agent.acceleration = defaultAcceleration;
         isDashing = false;

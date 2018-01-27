@@ -11,7 +11,7 @@ public class MonsterSpawner : MonoBehaviour, IFrequency
 	public float spawnDate = 0f;
 
 	private RoomSpawner _roomSpawner = null;
-    public ParticleSystem _spawnFx = null;
+    private ParticleSystem _spawnFx = null;
 	public Frequency frequency { get; set; }
 
 	// Use this for initialization

@@ -1,0 +1,131 @@
+fileFormatVersion: 2
+guid: 9c581624789860640bf9467042966890
+timeCreated: 1517057603
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: HeathPotion_Leaves
+    100004: HeathPotion_Liquid
+    100006: HeathPotion_Rope
+    400000: //RootNode
+    400002: HeathPotion_Leaves
+    400004: HeathPotion_Liquid
+    400006: HeathPotion_Rope
+    2100000: HeathPotion
+    2100002: HeathPotion_Liquid
+    2100004: HeathPotion_Leaves
+    2100006: HeathPotion_Rope
+    2300000: //RootNode
+    2300002: HeathPotion_Leaves
+    2300004: HeathPotion_Liquid
+    2300006: HeathPotion_Rope
+    3300000: //RootNode
+    3300002: HeathPotion_Leaves
+    3300004: HeathPotion_Liquid
+    3300006: HeathPotion_Rope
+    4300000: HeathPotion
+    4300002: HeathPotion_Liquid
+    4300004: HeathPotion_Leaves
+    4300006: HeathPotion_Rope
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeathPotion
+    second: {fileID: 2100000, guid: 3e249cca85f9dff4c87cf6c5917db292, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeathPotion_Leaves
+    second: {fileID: 2100000, guid: ebea61340b8712f42a98b83f58a39325, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeathPotion_Liquid
+    second: {fileID: 2100000, guid: 051c4ed5724e4b94ca78fb207b35305d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeathPotion_Rope
+    second: {fileID: 2100000, guid: 051c4ed5724e4b94ca78fb207b35305d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

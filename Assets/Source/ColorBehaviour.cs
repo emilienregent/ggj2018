@@ -3,7 +3,6 @@
 [RequireComponent(typeof(Renderer))]
 public class ColorBehaviour : MonoBehaviour
 {
-    [SerializeField] private Material _mat = null;
     [SerializeField] private Color _color = Color.white;
 
     private Renderer _renderer = null;

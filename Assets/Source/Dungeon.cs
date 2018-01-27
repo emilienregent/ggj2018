@@ -44,16 +44,9 @@ public class Dungeon : MonoBehaviour , IFrequency{
 
 	public void PlayerDead ()
 	{
-		Debug.Log ("player " + playerController.playerId + " is dead");
+		Debug.Log ("player " + playerController.playerId + " is dead at " + Time.realtimeSinceStartup);
 
-		game.fullPoolHp -= playerController.fullHp;
-
-		playerController.Resurect ();
-
-		if (game.fullPoolHp <= 0f)
-		{
-			Debug.Log ("Game Over");
-		}
+		game.PlayerDead (playerController);
 	}
 	
 	// Update is called once per frame

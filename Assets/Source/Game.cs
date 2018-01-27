@@ -19,6 +19,16 @@ public class Game : MonoBehaviour
 			dungeons [i].StartDungeon (players [0]);
 		}	
 	}
+
+	public void PlayerDead (PlayerController player)
+	{
+		fullPoolHp -= player.fullHp;
+
+		if (fullPoolHp > 0f)
+			player.Resurect ();
+		else
+			UnityEngine.Debug.Log ("Game Over");
+	}
 	
 	// Update is called once per frame
 	void Update ()

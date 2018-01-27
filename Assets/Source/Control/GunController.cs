@@ -13,13 +13,13 @@ public class GunController : MonoBehaviour {
     public Transform firePoint;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    private void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    private void Update () {
 		if(isFiring)
         {
             shotCounter -= Time.deltaTime;

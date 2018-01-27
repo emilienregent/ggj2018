@@ -8,8 +8,13 @@ public class ColorBehaviour : MonoBehaviour
     private Renderer _renderer = null;
     private MaterialPropertyBlock _block = null;
 
+    [HideInInspector] public Frequency frequency;
+
+
     public void SetFrequency(Frequency frequency)
     {
+        this.frequency = frequency;
+
         if (_renderer == null)
         {
             _block = new MaterialPropertyBlock();

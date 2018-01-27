@@ -11,13 +11,15 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 	private float				_timeToSpawn 	= 0f;
 	private int					_monsterCount	= 0;
 	private PlayerController	_player			= null;
+    private bool                _isStarted      = false;
+
 
 	public PatrolWaypoint[]		patrolPath		= null;
 
 	// Use this for initialization
 	public Frequency frequency { get; set; }
 
-	void Start ()
+    public void StartRoom ()
 	{
 		for (int i = 0; i < patrolPath.Length; i++)
 		{
@@ -29,6 +31,8 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 			spawners [i].SetRoomSpawner (this);
 			spawners [i].frequency = frequency;
 		}
+
+        _isStarted = true;
 	}
 
 	public void SetPlayer(PlayerController player)
@@ -49,6 +53,9 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 	// Update is called once per frame
 	void Update () 
 	{
+        if (_isStarted == false)
+            return;
+        
 		if (Time.realtimeSinceStartup >= _timeToSpawn)
 		{
 			SetTimeToSpawn ();

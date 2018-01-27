@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Proto/Menu.unity
     guid: bf3d5f1c1033b2246a2ab8dc9906e1bc
   - enabled: 1
-    path: Assets/Scenes/Gaetan.unity
-    guid: 007bcff16b2a97c4e8d557f93b9ee69e
+    path: Assets/Scenes/Proto/PlayerSelection.unity
+    guid: 692c403b16d1e2541a0f03b4b0b6f6bb
+  - enabled: 1
+    path: Assets/Scenes/Proto/Game.unity
+    guid: aa5b99a20d94c4b278584ab7f69c2aa9

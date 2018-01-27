@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Dungeon : MonoBehaviour , IFrequency{
 
-	public PlayerController playerController = null;
+    [HideInInspector] public Camera playerCamera = null;
+    [HideInInspector] public PlayerController playerController = null;
 	public RoomSpawner[]	roomSpawners = null;
 	public PlayerSpawner playerSpawn	= null;
 	public int id  = 0;
@@ -29,19 +30,20 @@ public class Dungeon : MonoBehaviour , IFrequency{
     }
 
 	// Use this for initialization
-	public void StartDungeon (PlayerController playerPrefab) 
+	public void StartDungeon (PlayerController playerPrefab, Camera playerCamera) 
 	{
-		playerController = GameObject.Instantiate<PlayerController> (playerPrefab);
-		playerController.transform.position = playerSpawn.transform.position;
+        playerController = GameObject.Instantiate<PlayerController> (playerPrefab, playerSpawn.transform.position, Quaternion.identity);
+
 		playerController.playerId = id;
 		playerController.frequency = frequency;
 		playerController.dungeon = this;
-		playerController.playerCamera = Camera.main;
+        playerController.playerCamera = playerCamera;
 
 		for (int i = 0; i < roomSpawners.Length; i++)
 		{
 			roomSpawners [i].SetPlayer (playerController);
 			roomSpawners [i].frequency = frequency;
+            roomSpawners[i].StartRoom();
 		}
 	}
 

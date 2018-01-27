@@ -31,25 +31,25 @@ public class Game : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-        //yield return new WaitForSeconds(1f);
-
 		for (int i = 0; i < dungeons.Length; i++)
 		{
+            #if !NO_CONTROLLER            
             if(PlayerPrefs.HasKey("Player_" + (i + 1) + "_controller") == true)
+            #endif
             {
-
                 dungeons[i].game = this;
                 dungeons[i].playerCamera = cameras[i];
 
                 dungeons[i].StartDungeon (players [i], cameras[i]);
             }
+            #if !NO_CONTROLLER
             else
             {
                 dungeons[i].gameObject.SetActive(false);
                 // cameras[i].gameObject.SetActive(false);
             }
-        }	
-
+            #endif
+        }
 	}
 
 	public void PlayerDead (PlayerController player)

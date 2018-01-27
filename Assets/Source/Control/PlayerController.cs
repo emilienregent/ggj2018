@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
         // Sound
         sfxAudioSource = GetComponent<AudioSource>();
         
-        _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller");
+        _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller", 1);
         Debug.Log("Player " + playerId + " use the controller " + _controllerId);
 
 		gun.gunOriginCamera = playerCamera;
@@ -210,6 +210,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
             Vector3 direction = heading / distance;
 
             closeEnemies[i].Kick(direction, strengh);
+
+            break;
         }
 
         if(closeEnemies.Count > 0)

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MonsterSpawner : MonoBehaviour 
+public class MonsterSpawner : MonoBehaviour, IFrequency
 {
 	public EnemyController[] spawns = null;
 	public float spawnDate = 0f;
 
 	private RoomSpawner _roomSpawner = null;
+	public Frequency frequency { get; set; }
 
 	// Use this for initialization
 	void Start () 
@@ -32,6 +33,7 @@ public class MonsterSpawner : MonoBehaviour
 		EnemyController enemyController = GameObject.Instantiate<EnemyController>(spawns [Random.Range (0, spawns.Length)], transform.position, Quaternion.identity);
 		enemyController.SetPlayer (targetPlayer);
 		enemyController.SetRoomSpawner (_roomSpawner);
+		enemyController.frequency = frequency;
 	}
 
 	void OnDrawGizmos ()

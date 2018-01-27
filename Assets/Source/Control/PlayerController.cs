@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, IFrequency {
     
     public float moveSpeed = 15.0f;
     public float triggerDeadZone = 0.5f;
-    
+    public float sightAngle = 25f;
     public int playerId;
     public  float                strengh = 10f;   
     public  float                kickDistance = 2f;
@@ -24,10 +25,19 @@ public class PlayerController : MonoBehaviour {
 
 	public float fullHp = 0f;
 	private float _hp = 0f;
+	private NavMeshAgent _agent = null;
+
+	public Frequency frequency { get; set; }
+
+	public Dungeon dungeon;
+
+	public bool isDead = false;
 
     // Use this for initialization
 
     private void Start () {
+		_agent = GetComponent<NavMeshAgent> ();
+
         _kickDistanceSqr = kickDistance * kickDistance;
 
         // TOOO : Remove as soon as we have an enemy spawner
@@ -58,12 +68,30 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetButtonDown("Player_" + _controllerId + "_Fire2"))
         {
+            List<Item> closeItems = GetInFrontItems();
+            if(closeItems.Count > 0)
+            {
+                GetInFrontItems()[0].ActiveItem(this);
+            }
+          
             Debug.Log("SPELL 2");
         }
 
         if(Input.GetButtonDown("Player_" + _controllerId + "_Fire3"))
         {
             Kick();
+
+            // /!\ TODO : Made generic area detection/kick /!\ 
+            List<Item> closeItems = GetInFrontItems();
+            if(closeItems.Count > 0)
+            {
+                Item frontItem = GetInFrontItems()[0];
+                Vector3 heading = frontItem.transform.position - transform.position;
+                float distance = heading.magnitude;
+                Vector3 direction = heading / distance;
+
+                frontItem.Kick(direction, strengh);
+            }
         }
 
     }
@@ -74,13 +102,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     // get input from the left stick for player movement
-    private void Move() {
-        Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal") * moveSpeed * Time.deltaTime, 0, Input.GetAxis("Player_" + _controllerId + "_Vertical") * moveSpeed * Time.deltaTime);
-        if(heading != Vector3.zero)
-        {
-            float distance = heading.magnitude;
-            transform.position += heading / distance * moveSpeed * Time.deltaTime;
-        }
+    private void Move() 
+	{
+		Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
+		_agent.destination = transform.position + heading.normalized;
     }
 
     // get input from right stick for the player rotation
@@ -131,11 +156,38 @@ public class PlayerController : MonoBehaviour {
         return closeEnemies;
     }
 
+    private List<Item> GetInFrontItems() {
+        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(transform.position.x, 2.5f, transform.position.z), kickDistance);
+        List<Item> closeItems = new List<Item>();
+        for(int i = 0; i < hitColliders.Length; i++)
+        {
+            if(hitColliders[i].tag == "item")
+            {
+              
+
+                Vector3 directionToTarget = hitColliders[i].transform.position - transform.position;
+                float angle = Vector3.Angle(Quaternion.AngleAxis(-0.5f * sightAngle, transform.up) * transform.forward, directionToTarget);
+                float distance = directionToTarget.magnitude;
+
+                if(Mathf.Abs(angle) < sightAngle && distance > transform.localScale.x)
+                {
+                    closeItems.Add(hitColliders[i].GetComponent<Item>());
+                }
+            }
+        }
+
+        return closeItems;
+    }
+
     private void OnDrawGizmos() 
     {
         UnityEditor.Handles.color = Color.yellow;
 
         UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, kickDistance);
+
+        UnityEditor.Handles.color = Color.green;
+        Vector3 fromVector = Quaternion.AngleAxis(-0.5f * sightAngle, transform.up) * transform.forward;
+        UnityEditor.Handles.DrawSolidArc(transform.position, transform.up, fromVector, sightAngle,  kickDistance);
     }
 
 
@@ -145,7 +197,14 @@ public class PlayerController : MonoBehaviour {
 
 		if (_hp <= 0f)
 		{
-			UnityEngine.Debug.Log ("GAME OVER");
+			isDead = true;
+			dungeon.PlayerDead ();
 		}
+	}
+
+	public void Resurect ()
+	{
+		isDead = false;
+		_hp = fullHp;
 	}
 }

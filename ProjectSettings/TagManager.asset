@@ -6,6 +6,7 @@ TagManager:
   tags:
   - monster
   - player
+  - item
   layers:
   - Default
   - TransparentFX

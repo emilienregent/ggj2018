@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour 
+public class EnemyController : MonoBehaviour, IFrequency
 {
     private const float INITIAL_SPEED = 5f;
     private const float KICK_TIME_MAX = 1f;
@@ -28,6 +28,8 @@ public class EnemyController : MonoBehaviour
 	public float hitFrequency = 0f;
 	private bool _canHit = false;
 	private float _timeToHit = 0f;
+
+	public Frequency frequency { get; set; }
 
     private void Start()
     {

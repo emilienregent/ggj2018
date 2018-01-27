@@ -38,7 +38,12 @@ public class BulletController : MonoBehaviour {
 		if (collider.gameObject.tag == hitTag)
 		{
 			if (hitTag == "monster")
-				collider.gameObject.GetComponent<EnemyController> ().HitByBullet (this);
+			{
+				if (parentGun.gunFrequency == collider.GetComponent<EnemyController> ().frequency)
+				{
+					collider.gameObject.GetComponent<EnemyController> ().HitByBullet (this);
+				}				
+			}
 			else if (hitTag == "player")
 				collider.gameObject.GetComponent<PlayerController> ().Hit (damage);
 			

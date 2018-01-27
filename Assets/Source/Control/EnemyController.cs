@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 	public Frequency frequency { get; set; }
 
 	public float distanceToAttack = 0f;
-
+	public GunController gun;
 	protected bool _huntPlayer = true;
 
 	public Attack _attack = null;
@@ -47,6 +47,12 @@ public class EnemyController : MonoBehaviour, IFrequency
     {
 		_agent = GetComponent<NavMeshAgent> ();
 		_attack = GetComponent<Attack> ();
+		if (gun != null)
+		{
+			gun.gunOriginCamera = _player.playerCamera;
+			gun.gunFrequency = frequency;
+			gun.bulletDamage = dmg;
+		}
 
 		MoveToPlayer ();
     }
@@ -62,6 +68,9 @@ public class EnemyController : MonoBehaviour, IFrequency
         _player.AddEnemy(this);
 
         _currentDungeonId = _player.dungeon.id;
+
+		if (gun != null)
+			gun.gunOriginCamera = _player.playerCamera;
 
         //UnityEngine.Debug.Log("Spawn enemy " + this + " for player " + _player.playerId + " for dungeon " + _player.dungeon);
 	}

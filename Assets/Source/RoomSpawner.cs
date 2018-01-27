@@ -28,8 +28,7 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 		for (int i = 0; i < spawners.Length; i++)
 		{
-			spawners [i].SetRoomSpawner (this);
-			spawners [i].frequency = frequency;
+            spawners [i].SetRoomSpawner (this, frequency);
 		}
 
         _isStarted = true;
@@ -92,6 +91,8 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 			waypointIndex = index;
 		}
+
+        UnityEngine.Assertions.Assert.IsTrue(patrolPath.Length > waypointIndex, "Waypoint " + waypointIndex + " doesn't exist in patrol path for Room Spawner " + this);
 
 		return patrolPath [waypointIndex];
 	}

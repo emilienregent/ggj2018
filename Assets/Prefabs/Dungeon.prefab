@@ -5887,10 +5887,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114764470500887274}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75, type: 2}
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114042312086601730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5996,9 +5999,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114283107377910244}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114110331137250110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6044,10 +6050,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114794314453636448}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75, type: 2}
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114137867437410860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6096,9 +6105,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114048373750180774}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114152229613497844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6280,10 +6292,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114778536529932358}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75, type: 2}
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114406411031776236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6331,9 +6346,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114579465003572658}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114520626028067438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6487,9 +6505,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114637996679799046}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114608473547511370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6502,9 +6523,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114454229331243002}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114611194555447876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6697,9 +6721,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114672726002419700}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114818261940277446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6724,9 +6751,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114595855802273184}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114076733494419978, guid: d4d46fdb761fd470aab2dd0da194dce6, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114834707487486134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6775,9 +6805,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114708388051858250}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}
 --- !u!114 &114926639878423046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6850,6 +6883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorBehaviour: {fileID: 114591996136883770}
+  spawnFxPrefab: {fileID: 198572823157358034, guid: 60cca0759c33134408bee0d47076e70d,
+    type: 2}
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
   spawnDate: 0
+  _spawnFx: {fileID: 0}

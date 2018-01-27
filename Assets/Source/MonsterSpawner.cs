@@ -6,10 +6,12 @@ using UnityEngine.AI;
 public class MonsterSpawner : MonoBehaviour, IFrequency
 {
     public ColorBehaviour colorBehaviour = null;
+    public ParticleSystem spawnFxPrefab = null;
 	public EnemyController[] spawns = null;
 	public float spawnDate = 0f;
 
 	private RoomSpawner _roomSpawner = null;
+    public ParticleSystem _spawnFx = null;
 	public Frequency frequency { get; set; }
 
 	// Use this for initialization
@@ -19,8 +21,14 @@ public class MonsterSpawner : MonoBehaviour, IFrequency
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	private void Update () {
+        if(_spawnFx != null)
+        {
+            if(_spawnFx.IsAlive() == false)
+            {
+                Destroy(_spawnFx.gameObject);
+            }
+        }
 	}
 
     public void SetRoomSpawner (RoomSpawner roomSpawner, Frequency frequency)
@@ -38,6 +46,10 @@ public class MonsterSpawner : MonoBehaviour, IFrequency
 		enemyController.SetPlayer (targetPlayer);
 		enemyController.SetRoomSpawner (_roomSpawner);
 		enemyController.frequency = frequency;
+
+        ParticleSystem _spawnFx = GameObject.Instantiate<ParticleSystem>(spawnFxPrefab, transform.position, Quaternion.identity);
+
+        _spawnFx.Play();
 	}
 
 	void OnDrawGizmos ()

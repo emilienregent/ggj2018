@@ -11,13 +11,17 @@ public class LevelGenerator : MonoBehaviour
 
     public void GenerateLevel()
     {
+        GameObject root = new GameObject();
+
         for (int x = 0; x < _level.width; ++x)
         {
             for (int y = 0; y < _level.height; ++y)
             {
                 GameObject go = GameObject.Instantiate(
                     (_level.GetPixel(x, y) == Color.white ? _walkableTilePrefab : _notWalkableTilePrefab),
-                    new Vector3(x, 0f, y), Quaternion.identity
+                    new Vector3(x, 0f, y),
+                    Quaternion.identity,
+                    root.transform
                 );
                 go.name = "TILE_" + x.ToString() + "_" + y.ToString();
             }

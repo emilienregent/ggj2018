@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum DirectionEnum
+{
+    NONE,
+    UP,
+    RIGHT,
+    DOWN,
+    LEFT
+}
+
 public class Game : MonoBehaviour 
 {
     private const float LINE_SIZE = 1f;

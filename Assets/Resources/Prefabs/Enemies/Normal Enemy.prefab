@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 195905111226145782}
   - component: {fileID: 135551248929094756}
   - component: {fileID: 54551340616127646}
+  - component: {fileID: 114960831899382910}
   m_Layer: 0
   m_Name: Normal Enemy
   m_TagString: monster
@@ -206,6 +207,19 @@ MonoBehaviour:
     m_RotationOrder: 0
   dmg: 5
   hitFrequency: 0.5
+  distanceToAttack: 2
+  _attack: {fileID: 0}
+--- !u!114 &114960831899382910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1290960000352112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b16888122d12640a216317d18fc38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135551248929094756
 SphereCollider:
   m_ObjectHideFlags: 1

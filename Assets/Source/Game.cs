@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour 
 {
@@ -25,6 +26,8 @@ public class Game : MonoBehaviour
         UnityEngine.Assertions.Assert.IsTrue(players.Length <= dungeons.Length, "Not enough player for all " + dungeons.Length + " dungeons");
     }
 
+	public float resurectDelay = 0f;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -47,6 +50,23 @@ public class Game : MonoBehaviour
             }
         }	
 
+	}
+
+	public void PlayerDead (PlayerController player)
+	{
+		fullPoolHp -= player.fullHp;
+
+		if (fullPoolHp > 0f)
+		{
+			player.Resurect (resurectDelay);
+		}
+		else
+        {
+            UnityEngine.Debug.Log("Game Over");
+            // Go back to the menu scene
+            // TODO : Doing something better
+            SceneManager.LoadScene(0);
+        }
 	}
 	
 	// Update is called once per frame
@@ -108,18 +128,18 @@ public class Game : MonoBehaviour
 
         UnityEngine.Debug.Log("Change position from room #" + currentPosition + " to room #" + newPosition);*/
 
-        Vector3 currentOffset = currentPosition - players[currentDungeonId - 1].transform.position;
+        Vector3 currentOffset = currentPosition - dungeons[currentDungeonId - 1].playerController.transform.position;
         Vector3 nextOffset = 
             direction == DirectionEnum.UP ? new Vector3(currentOffset.x, -currentOffset.y, -currentOffset.z + LINE_SIZE + 5f) : 
             direction == DirectionEnum.DOWN ? new Vector3(currentOffset.x, -currentOffset.y, -currentOffset.z + LINE_SIZE) : 
             direction == DirectionEnum.RIGHT ? new Vector3(-currentOffset.x + LINE_SIZE + 1.5f, currentOffset.y, currentOffset.z) : 
             new Vector3(-currentOffset.x + LINE_SIZE -1.5f, currentOffset.y, currentOffset.z);
 
-        return players[nextDungeonId - 1].transform.position + nextOffset;
+        return dungeons[nextDungeonId - 1].playerController.transform.position + nextOffset;
     }
 
-    public PlayerController GetPlayer(int currentDungeonId)
+    public PlayerController GetPlayer(int dungeonId)
     {
-        return dungeons[currentDungeonId - 1].playerController;
+        return dungeons[dungeonId - 1].playerController;
     }
 }

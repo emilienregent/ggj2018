@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 195210231506121738}
   - component: {fileID: 135870474544995806}
   - component: {fileID: 54567899592342368}
+  - component: {fileID: 114140175823616076}
   m_Layer: 0
   m_Name: Light Enemy
   m_TagString: monster
@@ -212,6 +213,19 @@ MonoBehaviour:
     m_RotationOrder: 0
   dmg: 1
   hitFrequency: 0.5
+  distanceToAttack: 0.1
+  _attack: {fileID: 0}
+--- !u!114 &114140175823616076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681014193707748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b16888122d12640a216317d18fc38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135870474544995806
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Dungeon : MonoBehaviour , IFrequency{
 
@@ -51,19 +50,8 @@ public class Dungeon : MonoBehaviour , IFrequency{
 
 	public void PlayerDead ()
 	{
-		Debug.Log ("player " + playerController.playerId + " is dead");
-
-		game.fullPoolHp -= playerController.fullHp;
-
-		playerController.Resurect ();
-
-		if (game.fullPoolHp <= 0f)
-		{
-			Debug.Log ("Game Over");
-            // Go back to the menu scene
-            // TODO : Doing something better
-            SceneManager.LoadScene(0);
-        }
+		Debug.Log ("player " + playerController.playerId + " is dead at " + Time.realtimeSinceStartup);
+		game.PlayerDead (playerController);
 	}
 	
 	// Update is called once per frame

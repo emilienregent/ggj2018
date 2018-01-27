@@ -14,11 +14,18 @@ public class RoomSpawner : MonoBehaviour, IFrequency
     private bool                _isStarted      = false;
 
 
+	public PatrolWaypoint[]		patrolPath		= null;
+
 	// Use this for initialization
 	public Frequency frequency { get; set; }
 
     public void StartRoom ()
 	{
+		for (int i = 0; i < patrolPath.Length; i++)
+		{
+			patrolPath [i].index = i;
+		}
+
 		for (int i = 0; i < spawners.Length; i++)
 		{
 			spawners [i].SetRoomSpawner (this);
@@ -59,6 +66,34 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 				_monsterCount++;
 			}
 		}
+	}
+
+	public PatrolWaypoint GetPatrolPoint(EnemyController enemy, int waypointIndex)
+	{
+		if (waypointIndex >= 0)
+		{
+			waypointIndex = (waypointIndex + 1) % patrolPath.Length;
+		}
+		else
+		{
+			int index = 0;
+			float minDistance = float.MaxValue;
+
+			for (int i = 0; i < patrolPath.Length; i++)
+			{
+				float distance = Vector3.Distance (enemy.transform.position, patrolPath [i].transform.position);
+
+				if (distance < minDistance)
+				{
+					minDistance = distance;
+					index = patrolPath [i].index;
+				}
+			}
+
+			waypointIndex = index;
+		}
+
+		return patrolPath [waypointIndex];
 	}
 
 	public void MonsterKill(EnemyController enemyController)

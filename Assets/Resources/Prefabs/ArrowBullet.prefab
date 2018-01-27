@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 23215208653437728}
   - component: {fileID: 114009560552070180}
   - component: {fileID: 114136613986287432}
-  - component: {fileID: 114985032630399506}
   m_Layer: 0
   m_Name: ArrowBullet
   m_TagString: Untagged
@@ -245,15 +244,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
---- !u!114 &114985032630399506
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1541019088195132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20222764cd9003842912b248cfe1c42b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _frequency: 1

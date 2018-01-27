@@ -22,7 +22,11 @@ public class Dungeon : MonoBehaviour , IFrequency{
 		{
 			//Send freqency
 		}
-	}
+
+        ColorBehaviour[] colorBehaviours = GetComponentsInChildren<ColorBehaviour>(true);
+        for (int i = 0; i < colorBehaviours.Length; i++)
+            colorBehaviours[i].SetFrequency(_frequency);
+    }
 
 	// Use this for initialization
 	public void StartDungeon (PlayerController playerPrefab) 

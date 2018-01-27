@@ -97,6 +97,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 			_huntPlayer = true;
 			_agent.stoppingDistance = distanceToAttack;
 			_agent.destination = _player.transform.position;
+			_agent.transform.LookAt (_player.transform);
 		}
 
 		SetCanHit(_agent.remainingDistance < _agent.stoppingDistance);
@@ -159,6 +160,8 @@ public class EnemyController : MonoBehaviour, IFrequency
                     int dungeonId = _player.dungeon.game.GetDungeonId(_currentDungeonId, direction);
                     Vector3 newPosition = _player.dungeon.game.GetPosition(transform.position, direction, _currentDungeonId, dungeonId);
 
+                    _player.dungeon.game.PlayWarpFx(transform.position, direction, _currentDungeonId, dungeonId);
+
                     // Froze warping direction
                     _isWarping = true;
                     _warpingDirection = direction;
@@ -210,7 +213,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 				MoveToPatrol ();
         }
 
-		if (_canHit == true)
+		if (_canHit == true && _player.isDead == false)
 		{
 			if (Time.realtimeSinceStartup > _timeToHit)
 			{

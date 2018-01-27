@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	public float normalSpeed = 0f;
 	public float deadSpeed = 0f;
 
+    public Animator animControl;
+
     // Use this for initialization
 
     private void Start () {
@@ -146,7 +148,14 @@ public class PlayerController : MonoBehaviour, IFrequency {
     private void Move() 
 	{
 		Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
-		_agent.destination = transform.position + heading.normalized;
+		//_agent.destination = transform.position + heading.normalized;
+        if(Input.GetAxis("Player_" + _controllerId + "_Horizontal") != 0 || Input.GetAxis("Player_" + _controllerId + "_Vertical") != 0)
+        {
+            animControl.SetTrigger("Player_Run_Idle");
+        } else
+        {
+            animControl.SetTrigger("Player_Idle");
+        }
     }
 
     // get input from the left stick for player movement
@@ -198,6 +207,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
     private void Kick()
     {
         List<EnemyController> closeEnemies = GetCloseEnemies();
+
+        animControl.SetTrigger("Player_Kick");
 
         for (int i = 0; i < closeEnemies.Count; ++i)
         {
@@ -300,4 +311,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 		_agent.speed = deadSpeed;
 		_timeToResurect = Time.realtimeSinceStartup + delay;
 	}
+
+    public void heal(int amount) {
+        _hp = Mathf.Min(fullHp, _hp + amount);
+    }
 }

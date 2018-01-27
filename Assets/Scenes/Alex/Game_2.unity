@@ -255,6 +255,62 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1415179340}
   m_Script: {fileID: 11500000, guid: 9f2dfaef09efc524b89ae4885d165bc0, type: 3}
+--- !u!1001 &288334570
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -44.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924675032474626, guid: ff87e517198e5c349abb12753df39935, type: 2}
+      propertyPath: m_Name
+      value: ArenaDungeon2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077851098849834, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: game
+      value: 
+      objectReference: {fileID: 1704741453}
+    - target: {fileID: 114077851098849834, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &383287252 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114352518260761794, guid: f2a28b4b8bdd74c8fbc6827dd8cd813c,
@@ -725,62 +781,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
---- !u!1001 &1329265528
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -44.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 216
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924675032474626, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_Name
-      value: ArenaDungeon2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114077851098849834, guid: ff87e517198e5c349abb12753df39935,
-        type: 2}
-      propertyPath: game
-      value: 
-      objectReference: {fileID: 1704741453}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
-  m_IsPrefabParent: 0
 --- !u!114 &1329265529 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114077851098849834, guid: ff87e517198e5c349abb12753df39935,
     type: 2}
-  m_PrefabInternal: {fileID: 1329265528}
+  m_PrefabInternal: {fileID: 288334570}
   m_Script: {fileID: 11500000, guid: 9f2dfaef09efc524b89ae4885d165bc0, type: 3}
 --- !u!1001 &1415179340
 Prefab:
@@ -789,16 +794,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114030757002940336, guid: ff87e517198e5c349abb12753df39935,
-        type: 2}
-      propertyPath: spawns.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114982805797754996, guid: ff87e517198e5c349abb12753df39935,
-        type: 2}
-      propertyPath: spawns.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
       propertyPath: m_LocalPosition.x
       value: -44.5
@@ -829,42 +824,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114077851098849834, guid: ff87e517198e5c349abb12753df39935,
         type: 2}
       propertyPath: game
       value: 
       objectReference: {fileID: 1704741453}
-    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
-        type: 2}
-      propertyPath: monsterLimit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114030757002940336, guid: ff87e517198e5c349abb12753df39935,
-        type: 2}
-      propertyPath: spawns.Array.data[1]
-      value: 
-      objectReference: {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75,
-        type: 2}
-    - target: {fileID: 114982805797754996, guid: ff87e517198e5c349abb12753df39935,
-        type: 2}
-      propertyPath: spawns.Array.data[1]
-      value: 
-      objectReference: {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75,
-        type: 2}
-    - target: {fileID: 4841364202193588, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 6.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4978819239968382, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4023295412794564, guid: ff87e517198e5c349abb12753df39935, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -95.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
   m_IsPrefabParent: 0
@@ -966,7 +932,7 @@ MonoBehaviour:
   fullPoolHp: 400
   players:
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
-  - {fileID: 114641608237711344, guid: 18cba646296174ff08b485081c8915f9, type: 2}
+  - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
   dungeons:

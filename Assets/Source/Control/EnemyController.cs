@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour 
 {
@@ -19,12 +20,33 @@ public class EnemyController : MonoBehaviour
     private float   _kickSpeed  = INITIAL_SPEED;
     private float   _kickTimer  = 0f;
 
+	private NavMeshAgent _agent	= null;
+
+	private RoomSpawner _roomSpawner = null;
+
+	public float dmg = 0f;
+	public float hitFrequency = 0f;
+	private bool _canHit = false;
+	private float _timeToHit = 0f;
+
     private void Start()
     {
+		_agent = GetComponent<NavMeshAgent> ();
+
         _isMoving = true;
 
         MoveToPlayer();
     }
+
+	public void SetPlayer (PlayerController playerController)
+	{
+		_player = playerController;
+	}
+
+	public void SetRoomSpawner (RoomSpawner roomSpawner)
+	{
+		_roomSpawner = roomSpawner;
+	}
 
     public void Kick(Vector3 direction, float strengh)
     {
@@ -37,22 +59,8 @@ public class EnemyController : MonoBehaviour
     // TODO : Remove as soon as we have pathfinding for enemies
     private void MoveToPlayer()
     {
-        // Update direction to player
-        Vector3 heading = _player.transform.position - transform.position;
-        float sqrLen = heading.sqrMagnitude;
-
-        if (sqrLen > 1f)
-        {
-            float distance = heading.magnitude;
-
-            _direction = heading / distance;
-
-            Move();
-        }
-        else
-        {
-            _isMoving = false;
-        }
+		_agent.destination = _player.transform.position;
+		_isMoving = _agent.remainingDistance < _agent.stoppingDistance;
     }
 
     private void Move()
@@ -78,9 +86,41 @@ public class EnemyController : MonoBehaviour
                 _isMoving   = true;
             }
         }
-        else if (_isMoving == true)
+        else
         {
             MoveToPlayer();
         }
+
+		if (_canHit == true)
+		{
+			if (Time.realtimeSinceStartup > _timeToHit)
+			{
+				_timeToHit = Time.realtimeSinceStartup + hitFrequency;
+				_player.Hit (dmg);
+			}	
+		}
     }
+
+	public void HitByBullet (BulletController bullet)
+	{
+		_roomSpawner.MonsterKill (this);
+		GameObject.Destroy (this.gameObject);
+	}
+
+	void OnTriggerEnter (Collider collider)
+	{
+		if (collider.tag == "player")
+		{
+			_canHit = true;
+			_timeToHit = Time.realtimeSinceStartup;
+		}
+	}
+
+	void OnTriggerExit (Collider collider)
+	{
+		if (collider.tag == "player")
+		{
+			_canHit = false;
+		}
+	}
 }

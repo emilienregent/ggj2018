@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114641608237711344}
   m_Layer: 0
   m_Name: playerBackup
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,6 +259,7 @@ MonoBehaviour:
   strengh: 10
   kickDistance: 2
   gun: {fileID: 114614179615834270}
+  playerCamera: {fileID: 0}
 --- !u!136 &136575163301307376
 CapsuleCollider:
   m_ObjectHideFlags: 1

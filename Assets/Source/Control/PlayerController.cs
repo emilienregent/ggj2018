@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour {
     public GunController gun;
     public Camera playerCamera;
 
+	public float fullHp = 0f;
+	private float _hp = 0f;
+
     // Use this for initialization
 
     private void Start () {
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
         // TOOO : Remove as soon as we have an enemy spawner
         _enemies = FindObjectsOfType<EnemyController>() as EnemyController[];
+		_hp = fullHp;
 	}
 
     // Update is called once per frame
@@ -106,4 +110,15 @@ public class PlayerController : MonoBehaviour {
 
         UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, kickDistance);
     }
+
+
+	public void Hit (float dmg)
+	{
+		_hp -= dmg;
+
+		if (_hp <= 0f)
+		{
+			UnityEngine.Debug.Log ("GAME OVER");
+		}
+	}
 }

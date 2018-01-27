@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     public  float                kickDistance = 2f;
     private float                _kickDistanceSqr = 0f;
     private EnemyController[]    _enemies = null;
+    private int                  _controllerId;
 
     public  AudioClip   sfxKickSuccess;
     public  AudioClip   sfxKickFail;
@@ -48,16 +49,24 @@ public class PlayerController : MonoBehaviour, IFrequency {
         cameraOffset = playerCamera.transform.position - transform.position;
         // Sound
         sfxAudioSource = GetComponent<AudioSource>();
+        
+        _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller");
+        if(_controllerId == 0)
+        {
+            _controllerId = playerId;
+            Debug.Log("No controller for this player, you give to him the controller corresponding to his playerId");
+        }
+        Debug.Log("Player " + playerId + " use the controller " + _controllerId);
     }
 
     // Update is called once per frame
     private void Update () {
         Move();
         Rotate();
-       
-        gun.isFiring = (Input.GetAxis("Player_" + playerId + "_Fire1") >= triggerDeadZone);
+        
+        gun.isFiring = (Input.GetAxis("Player_" + _controllerId + "_Fire1") >= triggerDeadZone);
 
-        if(Input.GetButtonDown("Player_" + playerId + "_Fire2"))
+        if(Input.GetButtonDown("Player_" + _controllerId + "_Fire2"))
         {
             List<Item> closeItems = GetInFrontItems();
             if(closeItems.Count > 0)
@@ -68,7 +77,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
             Debug.Log("SPELL 2");
         }
 
-        if(Input.GetButtonDown("Player_" + playerId + "_Fire3"))
+        if(Input.GetButtonDown("Player_" + _controllerId + "_Fire3"))
         {
             Kick();
 
@@ -95,13 +104,13 @@ public class PlayerController : MonoBehaviour, IFrequency {
     // get input from the left stick for player movement
     private void Move() 
 	{
-		Vector3 heading = new Vector3(Input.GetAxis("Player_" + playerId + "_Horizontal"), 0, Input.GetAxis("Player_" + playerId + "_Vertical"));
+		Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
 		_agent.destination = transform.position + heading.normalized;
     }
 
     // get input from right stick for the player rotation
     private void Rotate() {
-        Vector3 direction = Vector3.right * Input.GetAxisRaw("Player_" + playerId + "_RotationH") + Vector3.forward * -Input.GetAxisRaw("Player_" + playerId + "_RotationV");
+        Vector3 direction = Vector3.right * Input.GetAxisRaw("Player_" + _controllerId + "_RotationH") + Vector3.forward * -Input.GetAxisRaw("Player_" + _controllerId + "_RotationV");
         if(direction.sqrMagnitude > 0.0f)
         {
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);

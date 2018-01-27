@@ -38,10 +38,10 @@ public class PlayerSelectionManager : MonoBehaviour {
 
             for (int joystickId = 1; joystickId < _cJoysticks + 1; joystickId++)
             {
-                Debug.Log("Check controller " + joystickId);
+                Debug.Log("Is controller " + joystickId + " is pressing A ?");
                 if (Input.GetButtonDown("Joystick" + joystickId + "Submit"))
                 {
-                    Debug.Log("Controller " + joystickId);
+                    Debug.Log("Controller " + joystickId + " is pressing A");
                     for (int i = 0; i < players.Length; i++)
                     {
                         if (PlayerPrefs.HasKey("Player_" + players[i].playerId + "_controller") == false)
@@ -54,10 +54,10 @@ public class PlayerSelectionManager : MonoBehaviour {
                             {
                                 pressStart.gameObject.SetActive(true);
 
-                                Debug.Log(PlayerPrefs.GetInt("Player_1_controller"));
-                                Debug.Log(PlayerPrefs.GetInt("Player_2_controller"));
-                                Debug.Log(PlayerPrefs.GetInt("Player_3_controller"));
-                                Debug.Log(PlayerPrefs.GetInt("Player_4_controller"));
+                                Debug.Log("Player 1 use controler : " + PlayerPrefs.GetInt("Player_1_controller"));
+                                Debug.Log("Player 2 use controler : " + PlayerPrefs.GetInt("Player_2_controller"));
+                                Debug.Log("Player 3 use controler : " + PlayerPrefs.GetInt("Player_3_controller"));
+                                Debug.Log("Player 4 use controler : " + PlayerPrefs.GetInt("Player_4_controller"));
                             }
                             break;
                         }

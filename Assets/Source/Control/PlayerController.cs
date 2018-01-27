@@ -17,8 +17,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
     public bool isDashing = false;
     public bool canDash = true;
-
-    public float triggerDeadZone = 0.5f;
+    
     public float sightAngle = 25f;
     public int playerId;
 
@@ -70,8 +69,10 @@ public class PlayerController : MonoBehaviour, IFrequency {
         // Sound
         sfxAudioSource = GetComponent<AudioSource>();
         
-        _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller");
-        Debug.Log("Player " + playerId + " use the controller " + _controllerId);
+        _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller", 1);
+
+		gun.gunOriginCamera = playerCamera;
+		gun.gunFrequency = frequency;
     }
 
     // Update is called once per frame
@@ -87,17 +88,17 @@ public class PlayerController : MonoBehaviour, IFrequency {
         }
         
         Rotate();
-       
+
         // FIRE
-        gun.isFiring = (Input.GetAxis("Player_" + _controllerId + "_Fire1") >= triggerDeadZone);
+        gun.isFiring = Input.GetButtonDown("Player_" + _controllerId + "_Fire1");
 
         // DASH
-        if(Input.GetAxis("Player_" + _controllerId + "_Dash") >= triggerDeadZone && canDash)
+        if (Input.GetButtonDown("Player_" + _controllerId + "_Dash") && canDash)
         {
             Dash();
         }
 
-        if(Input.GetAxis("Player_" + _controllerId + "_Dash") < triggerDeadZone && !isDashing && !canDash)
+        if(Input.GetButtonUp("Player_" + _controllerId + "_Dash") && !isDashing && !canDash)
         {
             canDash = true;
         }
@@ -110,8 +111,6 @@ public class PlayerController : MonoBehaviour, IFrequency {
             {
                 GetInFrontItems()[0].ActiveItem(this);
             }
-          
-            Debug.Log("SPELL 2");
         }
 
         if(Input.GetButtonDown("Player_" + _controllerId + "_Fire3"))
@@ -207,6 +206,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
             Vector3 direction = heading / distance;
 
             closeEnemies[i].Kick(direction, strengh);
+
+            break;
         }
 
         if(closeEnemies.Count > 0)

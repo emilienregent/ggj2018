@@ -35,6 +35,7 @@ public class Dungeon : MonoBehaviour , IFrequency{
         playerController = GameObject.Instantiate<PlayerController> (playerPrefab, playerSpawn.transform.position, Quaternion.identity);
 
 		playerController.playerId = id;
+        playerController.gameObject.name = "Player #" + id;
 		playerController.frequency = frequency;
 		playerController.dungeon = this;
         playerController.playerCamera = playerCamera;
@@ -51,7 +52,7 @@ public class Dungeon : MonoBehaviour , IFrequency{
 	public void PlayerDead ()
 	{
 		Debug.Log ("player " + playerController.playerId + " is dead at " + Time.realtimeSinceStartup);
-		//game.PlayerDead (playerController);
+		game.PlayerDead (playerController);
 	}
 	
 	// Update is called once per frame

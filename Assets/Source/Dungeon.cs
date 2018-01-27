@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dungeon : MonoBehaviour , IFrequency{
 
@@ -59,7 +60,10 @@ public class Dungeon : MonoBehaviour , IFrequency{
 		if (game.fullPoolHp <= 0f)
 		{
 			Debug.Log ("Game Over");
-		}
+            // Go back to the menu scene
+            // TODO : Doing something better
+            SceneManager.LoadScene(0);
+        }
 	}
 	
 	// Update is called once per frame

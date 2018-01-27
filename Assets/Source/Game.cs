@@ -32,12 +32,20 @@ public class Game : MonoBehaviour
 
 		for (int i = 0; i < dungeons.Length; i++)
 		{
-			dungeons[i].game = this;
-            dungeons[i].playerCamera = cameras[i];
+            if(PlayerPrefs.HasKey("Player_" + (i + 1) + "_controller") == true)
+            {
 
+                dungeons[i].game = this;
+                dungeons[i].playerCamera = cameras[i];
 
-            dungeons[i].StartDungeon (players [i], cameras[i]);
-		}	
+                dungeons[i].StartDungeon (players [i], cameras[i]);
+            }
+            else
+            {
+                dungeons[i].gameObject.SetActive(false);
+                // cameras[i].gameObject.SetActive(false);
+            }
+        }	
 
 	}
 	

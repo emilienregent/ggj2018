@@ -97,6 +97,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 			_huntPlayer = true;
 			_agent.stoppingDistance = distanceToAttack;
 			_agent.destination = _player.transform.position;
+			_agent.transform.LookAt (_player.transform);
 		}
 
 		SetCanHit(_agent.remainingDistance < _agent.stoppingDistance);
@@ -210,7 +211,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 				MoveToPatrol ();
         }
 
-		if (_canHit == true)
+		if (_canHit == true && _player.isDead == false)
 		{
 			if (Time.realtimeSinceStartup > _timeToHit)
 			{

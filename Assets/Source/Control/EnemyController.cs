@@ -28,6 +28,10 @@ public class EnemyController : MonoBehaviour, IFrequency
 
 	protected RoomSpawner _roomSpawner = null;
 
+	public float fullHp = 0f;
+	private float _hp = 0f;
+	public float hp { get { return _hp; } }
+
 	public float dmg = 0f;
 	public float hitFrequency = 0f;
 	protected bool _canHit = false;
@@ -53,6 +57,8 @@ public class EnemyController : MonoBehaviour, IFrequency
 			gun.gunFrequency = frequency;
 			gun.bulletDamage = dmg;
 		}
+
+		_hp = fullHp;
 
 		MoveToPlayer ();
     }
@@ -160,6 +166,8 @@ public class EnemyController : MonoBehaviour, IFrequency
                     int dungeonId = _player.dungeon.game.GetDungeonId(_currentDungeonId, direction);
                     Vector3 newPosition = _player.dungeon.game.GetPosition(transform.position, direction, _currentDungeonId, dungeonId);
 
+                    _player.dungeon.game.PlayWarpFx(transform.position, direction, _currentDungeonId, dungeonId);
+
                     // Froze warping direction
                     _isWarping = true;
                     _warpingDirection = direction;
@@ -223,13 +231,18 @@ public class EnemyController : MonoBehaviour, IFrequency
 
 	public void HitByBullet (BulletController bullet)
 	{
-        if (_player != null)
-        {
-            _player.RemoveEnemy(this);
-        }
+		_hp -= bullet.damage;
 
-		_roomSpawner.MonsterKill (this);
-		GameObject.Destroy (this.gameObject);
+		if (_hp <= 0f)
+		{	
+			if (_player != null)
+			{
+				_player.RemoveEnemy (this);
+			}
+
+			_roomSpawner.MonsterKill (this);
+			GameObject.Destroy (this.gameObject);
+		}
 	}
 
     private void StopKick()

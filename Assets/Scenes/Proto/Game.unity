@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44152004, g: 0.4903772, b: 0.57039326, a: 1}
+  m_IndirectSpecularColor: {r: 0.44152117, g: 0.49037856, b: 0.5703947, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1376,6 +1376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullPoolHp: 400
+  canvas: {fileID: 1264339646}
+  warpFx: {fileID: 1617699688393982, guid: 758c13109ad344a99b1dfdaa6aaf90b5, type: 2}
   players:
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}
   - {fileID: 114641608237711344, guid: f499b740ca87d0a4b8a578d8176ea1d3, type: 2}

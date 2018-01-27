@@ -28,8 +28,7 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 		for (int i = 0; i < spawners.Length; i++)
 		{
-			spawners [i].SetRoomSpawner (this);
-			spawners [i].frequency = frequency;
+            spawners [i].SetRoomSpawner (this, frequency);
 		}
 
         _isStarted = true;

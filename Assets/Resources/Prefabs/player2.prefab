@@ -339,10 +339,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d61daedaa4255e46b17aa897bf53de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  maxDashTime: 1
+  dashStoppingSpeed: 0.1
+  dashSpeedMultiplicator: 4
+  dashAccelerationMultiplicator: 12
+  dashDirection: {x: 0, y: 0, z: 0}
+  isDashing: 0
+  canDash: 1
   triggerDeadZone: 0.5
+  sightAngle: 25
   playerId: 1
-  strengh: 10
+  strengh: 20
   kickDistance: 2
   sfxKickSuccess: {fileID: 8300000, guid: c3003551c2cf3984c8b4c357287ec718, type: 3}
   sfxKickFail: {fileID: 8300000, guid: d18502014c8c51644a8ee98c5620c7cb, type: 3}

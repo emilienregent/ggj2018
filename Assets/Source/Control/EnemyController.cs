@@ -157,8 +157,17 @@ public class EnemyController : MonoBehaviour, IFrequency
                     // Set new player and teleport into new room
                     _player = _player.dungeon.game.GetPlayer(dungeonId);
                     _currentDungeonId = dungeonId;
-                    transform.position = newPosition;
+
                     _agent.destination = _player.transform.position;
+
+                    //_agent.enabled = false;
+
+                    transform.position = newPosition;
+
+                    GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+                    cube.transform.position = newPosition;
+                    cube.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
                 }
             }
         }

@@ -52,7 +52,7 @@ public class GunController : MonoBehaviour {
             {
                 shotCounter = timeBetweenShot;
                 BulletController newBullet = ActiveBullet();
-                 newBullet.originPlayer = player.GetComponent<PlayerController>();
+                newBullet.originPlayer = player.GetComponent<PlayerController>();
             }
         } else
         {

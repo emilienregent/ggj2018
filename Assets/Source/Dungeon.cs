@@ -35,6 +35,7 @@ public class Dungeon : MonoBehaviour , IFrequency{
         playerController = GameObject.Instantiate<PlayerController> (playerPrefab, playerSpawn.transform.position, Quaternion.identity);
 
 		playerController.playerId = id;
+        playerController.gameObject.name = "Player #" + id;
 		playerController.frequency = frequency;
 		playerController.dungeon = this;
         playerController.playerCamera = playerCamera;

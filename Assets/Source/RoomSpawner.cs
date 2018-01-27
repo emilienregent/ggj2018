@@ -62,8 +62,28 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 			if (_monsterCount < monsterLimit)
 			{
-				spawners [Random.Range (0, spawners.Length)].Spawn (_player);
-				_monsterCount++;
+                float diffcheck = Mathf.RoundToInt(Time.realtimeSinceStartup);
+                int monsterMod = 1;
+                int oldmonsterMod = monsterMod;
+                if(diffcheck <= 25.0f)
+                {   monsterMod = 1;}
+                else if(diffcheck < 45.0f)
+                { monsterMod = 10; }
+                else if (diffcheck < 65.0f)
+                { monsterMod = 20; }
+                else
+                { monsterMod = 30; }
+
+                if(monsterMod > oldmonsterMod)
+                {
+                    monsterLimit += (monsterMod - oldmonsterMod);
+                }
+
+                Debug.Log(monsterLimit + "MONSTER LIMIT");
+                for (int i = 0; i < monsterMod; i++)
+                { spawners[Random.Range(0, spawners.Length)].Spawn(_player); }
+				_monsterCount = _monsterCount + ( 1 * monsterMod);
+
 			}
 		}
 	}

@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558039256b8f5204f8893e27eb230356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: {fileID: 2800000, guid: 3539c8c0aab11204e8cc6b1d78598057, type: 3}
+  _level: {fileID: 2800000, guid: 2e8a42ead01850145abc1045f36266f1, type: 3}
   _walkableTilePrefab: {fileID: 1022760263716484, guid: fed8d067f50d1b24d8608dcefc06bc86,
     type: 2}
   _notWalkableTilePrefab: {fileID: 1986938451848816, guid: 2f59f26cbd243fd4ab467d0720e77ca3,

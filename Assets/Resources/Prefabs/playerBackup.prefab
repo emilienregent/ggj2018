@@ -339,8 +339,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d61daedaa4255e46b17aa897bf53de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  maxDashTime: 1
+  dashStoppingSpeed: 0.1
+  dashSpeedMultiplicator: 4
+  dashAccelerationMultiplicator: 12
+  dashDirection: {x: 0, y: 0, z: 0}
+  isDashing: 0
+  canDash: 1
   triggerDeadZone: 0.5
+  sightAngle: 25
   playerId: 1
   strengh: 10
   kickDistance: 2
@@ -373,13 +380,13 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
-  m_Acceleration: 12
+  m_Speed: 12
+  m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
+  m_AutoBraking: 1
   m_AutoRepath: 0
   m_Height: 2
   m_BaseOffset: 1

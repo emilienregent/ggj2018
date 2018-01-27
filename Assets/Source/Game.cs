@@ -15,6 +15,8 @@ public enum DirectionEnum
 public class Game : MonoBehaviour 
 {
     private const float LINE_SIZE = 1f;
+    private const float UP_DOWN_PERSPECTIVE_OFFSET = 5f;
+    private const float LATERAL_PERSPECTIVE_OFFSET = 1.5f;
 
     private readonly Dictionary<int, DungeonConfig> DUNGEONS_CONFIG = new Dictionary<int, DungeonConfig>()
     {
@@ -25,6 +27,8 @@ public class Game : MonoBehaviour
     };
 
 	public float fullPoolHp = 0f;
+    public Canvas canvas = null;
+    public GameObject warpFx = null;
 	public PlayerController[] players = null;
 	public Dungeon[] dungeons = null;
     public Camera[] cameras = null;
@@ -139,10 +143,10 @@ public class Game : MonoBehaviour
 
         Vector3 currentOffset = currentPosition - dungeons[currentDungeonId - 1].playerController.transform.position;
         Vector3 nextOffset = 
-            direction == DirectionEnum.UP ? new Vector3(currentOffset.x, -currentOffset.y, -currentOffset.z + LINE_SIZE + 5f) : 
+            direction == DirectionEnum.UP ? new Vector3(currentOffset.x, -currentOffset.y, -currentOffset.z + LINE_SIZE + UP_DOWN_PERSPECTIVE_OFFSET) : 
             direction == DirectionEnum.DOWN ? new Vector3(currentOffset.x, -currentOffset.y, -currentOffset.z + LINE_SIZE) : 
-            direction == DirectionEnum.RIGHT ? new Vector3(-currentOffset.x + LINE_SIZE + 1.5f, currentOffset.y, currentOffset.z) : 
-            new Vector3(-currentOffset.x + LINE_SIZE -1.5f, currentOffset.y, currentOffset.z);
+            direction == DirectionEnum.RIGHT ? new Vector3(-currentOffset.x + LINE_SIZE + LATERAL_PERSPECTIVE_OFFSET, currentOffset.y, currentOffset.z) : 
+            new Vector3(-currentOffset.x + LINE_SIZE -LATERAL_PERSPECTIVE_OFFSET, currentOffset.y, currentOffset.z);
 
         return dungeons[nextDungeonId - 1].playerController.transform.position + nextOffset;
     }
@@ -150,5 +154,25 @@ public class Game : MonoBehaviour
     public PlayerController GetPlayer(int dungeonId)
     {
         return dungeons[dungeonId - 1].playerController;
+    }
+
+    public void PlayWarpFx(Vector3 position, DirectionEnum direction, int currentDungeonId, int nextDungeonId)
+    {
+        Vector2 viewPos = cameras[currentDungeonId - 1].WorldToViewportPoint(position);
+        UnityEngine.Debug.Log("View pos is : " + viewPos);
+
+        GameObject entryFx = GameObject.Instantiate<GameObject>(warpFx, viewPos, Quaternion.identity);
+
+        float halfWidth = (Screen.width * 0.5f);
+        float halfHeight = (Screen.height * 0.5f);
+
+        float x = direction == DirectionEnum.LEFT || direction == DirectionEnum.RIGHT ? 0f :
+            currentDungeonId % 2 != 0 ? (viewPos.x - 1) * halfWidth : viewPos.x * halfWidth;
+
+        float y = direction == DirectionEnum.UP || direction == DirectionEnum.DOWN ? 0f :
+            currentDungeonId > 2 ? (viewPos.x - 1) * halfHeight : viewPos.x * halfHeight;
+
+        entryFx.transform.position = new Vector2(x, y);
+        entryFx.transform.SetParent(canvas.transform, false);
     }
 }

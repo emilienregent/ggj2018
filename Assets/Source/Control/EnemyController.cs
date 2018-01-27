@@ -160,6 +160,8 @@ public class EnemyController : MonoBehaviour, IFrequency
                     int dungeonId = _player.dungeon.game.GetDungeonId(_currentDungeonId, direction);
                     Vector3 newPosition = _player.dungeon.game.GetPosition(transform.position, direction, _currentDungeonId, dungeonId);
 
+                    _player.dungeon.game.PlayWarpFx(transform.position, direction, _currentDungeonId, dungeonId);
+
                     // Froze warping direction
                     _isWarping = true;
                     _warpingDirection = direction;

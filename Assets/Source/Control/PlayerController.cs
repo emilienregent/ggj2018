@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     public GunController gun;
     public Camera playerCamera;
+    private Vector3 cameraOffset;
 
     // Use this for initialization
 
@@ -22,6 +23,9 @@ public class PlayerController : MonoBehaviour {
 
         // TOOO : Remove as soon as we have an enemy spawner
         _enemies = FindObjectsOfType<EnemyController>() as EnemyController[];
+
+        // Get the camera offset
+        cameraOffset = playerCamera.transform.position - transform.position;
 	}
 
     // Update is called once per frame
@@ -49,6 +53,11 @@ public class PlayerController : MonoBehaviour {
             Kick();
         }
 
+    }
+
+    private void LateUpdate()
+    {
+        playerCamera.transform.position = transform.position + cameraOffset;
     }
 
     // get input from the left stick for player movement

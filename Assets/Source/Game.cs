@@ -10,6 +10,8 @@ public class Game : MonoBehaviour
 
 	public Dungeon[] dungeons = null;
 
+	public float resurectDelay = 0f;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,7 +27,9 @@ public class Game : MonoBehaviour
 		fullPoolHp -= player.fullHp;
 
 		if (fullPoolHp > 0f)
-			player.Resurect ();
+		{
+			player.Resurect (resurectDelay);
+		}
 		else
 			UnityEngine.Debug.Log ("Game Over");
 	}

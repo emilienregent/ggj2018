@@ -349,6 +349,10 @@ MonoBehaviour:
   gun: {fileID: 114614179615834270}
   playerCamera: {fileID: 0}
   fullHp: 100
+  dungeon: {fileID: 0}
+  isDead: 0
+  normalSpeed: 8
+  deadSpeed: 16
 --- !u!136 &136575163301307376
 CapsuleCollider:
   m_ObjectHideFlags: 1

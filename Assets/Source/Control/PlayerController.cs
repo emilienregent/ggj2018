@@ -32,10 +32,17 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 	public bool isDead = false;
 
+	private float _timeToResurect = 0f;
+
+	public float normalSpeed = 0f;
+	public float deadSpeed = 0f;
+
     // Use this for initialization
 
     private void Start () {
 		_agent = GetComponent<NavMeshAgent> ();
+
+		_agent.speed = normalSpeed;
 
         _kickDistanceSqr = kickDistance * kickDistance;
 
@@ -67,6 +74,11 @@ public class PlayerController : MonoBehaviour, IFrequency {
             Kick();
         }
 
+		if (isDead == true && Time.time >= _timeToResurect)
+		{
+			isDead = false;
+			_agent.speed = normalSpeed;
+		}
     }
 
     private void LateUpdate()
@@ -148,9 +160,10 @@ public class PlayerController : MonoBehaviour, IFrequency {
 		}
 	}
 
-	public void Resurect ()
+	public void Resurect (float delay)
 	{
-		isDead = false;
 		_hp = fullHp;
+		_agent.speed = deadSpeed;
+		_timeToResurect = Time.realtimeSinceStartup + delay;
 	}
 }

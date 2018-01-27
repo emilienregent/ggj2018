@@ -323,7 +323,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   dmg: 5
   hitFrequency: 0.5
-  distanceToAttack: 2
+  distanceToAttack: 10
   gun: {fileID: 114465553907516028}
   _attack: {fileID: 0}
 --- !u!114 &114184410282759542

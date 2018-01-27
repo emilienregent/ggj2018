@@ -300,4 +300,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 		_agent.speed = deadSpeed;
 		_timeToResurect = Time.realtimeSinceStartup + delay;
 	}
+
+    public void heal(int amount) {
+        _hp = Mathf.Min(fullHp, _hp + amount);
+    }
 }

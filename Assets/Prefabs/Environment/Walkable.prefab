@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33876031159543556}
   - component: {fileID: 23351998301834460}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Walkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

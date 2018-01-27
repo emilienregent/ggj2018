@@ -18,6 +18,11 @@ public class GunController : MonoBehaviour {
     public List<BulletController> activeBullets = new List<BulletController>();
     public int startingBullets;
 
+	public Frequency gunFrequency;
+	public Camera gunOriginCamera;
+
+	public float bulletDamage = 0f;
+
     // Use this for initialization
     private void Start () {
 
@@ -25,22 +30,13 @@ public class GunController : MonoBehaviour {
 
         for(int i = 0; i < startingBullets; i++)
         {
-            BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
-
-			Frequency frequency = player.GetComponent<PlayerController> ().frequency;
-
-			ColorBehaviour[] colors= newBullet.GetComponentsInChildren<ColorBehaviour> ();
-			for (int j = 0; j < colors.Length; j++)
-			{
-				colors [j].SetFrequency (frequency);
-			}
+            BulletController newBullet = InstantiateNewBullet(bullet, gunFrequency, firePoint.position, firePoint.rotation);
 
             newBullet.initParentGun(this);
             newBullet.gameObject.SetActive(false);
             newBullet.name = player.name + "_bullet_" + i;
             inactiveBullets.Push(newBullet);
         }
-
     }
 
     // Update is called once per frame
@@ -51,13 +47,33 @@ public class GunController : MonoBehaviour {
             if(shotCounter <= 0)
             {
                 shotCounter = timeBetweenShot;
-                BulletController newBullet = ActiveBullet();
-                 newBullet.originPlayer = player.GetComponent<PlayerController>();
+				Shoot ();
             }
         } else
         {
             shotCounter = 0;
         }
+	}
+
+	public void Shoot()
+	{
+		BulletController newBullet = ActiveBullet();
+		newBullet.originCamera = gunOriginCamera;
+	}
+
+	public BulletController InstantiateNewBullet (BulletController prefab, Frequency frequency, Vector3 position, Quaternion rotation)
+	{
+		BulletController newBullet  = Instantiate(prefab, position, rotation);
+
+		ColorBehaviour[] colors= newBullet.GetComponentsInChildren<ColorBehaviour> ();
+		for (int j = 0; j < colors.Length; j++)
+		{
+			colors [j].SetFrequency (frequency);
+		}
+
+		newBullet.damage = bulletDamage;
+
+		return newBullet;
 	}
 
     public BulletController ActiveBullet() {
@@ -71,7 +87,7 @@ public class GunController : MonoBehaviour {
             activeBullets.Add(newBullet);
         } else
         {
-            newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+			newBullet = InstantiateNewBullet(bullet, gunFrequency, firePoint.position, firePoint.rotation);
             newBullet.initParentGun(this);
             newBullet.name = player.name + "_bullet_" + activeBullets.Count;
             activeBullets.Add(newBullet);

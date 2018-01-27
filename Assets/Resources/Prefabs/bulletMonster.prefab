@@ -9,17 +9,38 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1695523551831648}
+  m_RootGameObject: {fileID: 1655112168492678}
   m_IsPrefabParent: 1
---- !u!1 &1255492836815226
+--- !u!1 &1655112168492678
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4289748662267922}
-  - component: {fileID: 96188814921690184}
+  - component: {fileID: 4213122862833856}
+  - component: {fileID: 33222292863533172}
+  - component: {fileID: 65905706103118794}
+  - component: {fileID: 23664558436324592}
+  - component: {fileID: 114944386109503038}
+  - component: {fileID: 54367918323075006}
+  - component: {fileID: 114133397636049222}
+  m_Layer: 0
+  m_Name: bulletMonster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1803792544596874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4880220770167730}
+  - component: {fileID: 96069885568529166}
   m_Layer: 0
   m_Name: ArrowTrail
   m_TagString: Untagged
@@ -27,60 +48,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1695523551831648
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4174718047872966}
-  - component: {fileID: 33855111267255860}
-  - component: {fileID: 65966482762829914}
-  - component: {fileID: 23517091854516382}
-  - component: {fileID: 114851237012570376}
-  - component: {fileID: 54809725331956990}
-  - component: {fileID: 114296194803445788}
-  m_Layer: 0
-  m_Name: bullet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4174718047872966
+--- !u!4 &4213122862833856
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695523551831648}
+  m_GameObject: {fileID: 1655112168492678}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0, z: 5.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4289748662267922}
+  - {fileID: 4880220770167730}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!4 &4289748662267922
+--- !u!4 &4880220770167730
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255492836815226}
+  m_GameObject: {fileID: 1803792544596874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4174718047872966}
+  m_Father: {fileID: 4213122862833856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23517091854516382
+--- !u!23 &23664558436324592
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695523551831648}
+  m_GameObject: {fileID: 1655112168492678}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -109,19 +109,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33855111267255860
+--- !u!33 &33222292863533172
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695523551831648}
+  m_GameObject: {fileID: 1655112168492678}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54809725331956990
+--- !u!54 &54367918323075006
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695523551831648}
+  m_GameObject: {fileID: 1655112168492678}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -131,25 +131,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65966482762829914
+--- !u!65 &65905706103118794
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695523551831648}
+  m_GameObject: {fileID: 1655112168492678}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6, y: 6, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!96 &96188814921690184
+--- !u!96 &96069885568529166
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255492836815226}
+  m_GameObject: {fileID: 1803792544596874}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -230,24 +230,24 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0
   m_Autodestruct: 0
---- !u!114 &114296194803445788
+--- !u!114 &114133397636049222
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695523551831648}
+  m_GameObject: {fileID: 1655112168492678}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8042f9d6ce883074ab8b6fdfae2147a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &114851237012570376
+--- !u!114 &114944386109503038
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1695523551831648}
+  m_GameObject: {fileID: 1655112168492678}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15c3c47b9434f5f4088233a4a03ad071, type: 3}
@@ -255,4 +255,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 25
   originCamera: {fileID: 0}
-  hitTag: monster
+  hitTag: player

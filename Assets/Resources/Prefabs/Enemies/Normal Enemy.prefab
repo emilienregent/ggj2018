@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98eebda29c06f41d89b0775ad161944d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
   _weight: 1
   _speedCurve:
     serializedVersion: 2
@@ -207,7 +206,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   dmg: 5
   hitFrequency: 0.5
-  distanceToAttack: 2
+  distanceToAttack: 0.1
   _attack: {fileID: 0}
 --- !u!114 &114960831899382910
 MonoBehaviour:

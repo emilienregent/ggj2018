@@ -72,6 +72,9 @@ public class PlayerController : MonoBehaviour, IFrequency {
         
         _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller");
         Debug.Log("Player " + playerId + " use the controller " + _controllerId);
+
+		gun.gunOriginCamera = playerCamera;
+		gun.gunFrequency = frequency;
     }
 
     // Update is called once per frame

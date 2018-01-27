@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     private void Move() 
 	{
 		Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
-		//_agent.destination = transform.position + heading.normalized;
+		_agent.destination = transform.position + heading.normalized;
         if(Input.GetAxis("Player_" + _controllerId + "_Horizontal") != 0 || Input.GetAxis("Player_" + _controllerId + "_Vertical") != 0)
         {
             animControl.SetTrigger("Player_Run_Idle");

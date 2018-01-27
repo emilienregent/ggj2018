@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23277975858935020}
   - component: {fileID: 114641608237711344}
   - component: {fileID: 82012385706196942}
+  - component: {fileID: 195417607235330092}
   m_Layer: 0
   m_Name: playerBackup
   m_TagString: player
@@ -128,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1038542928843110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -0.4193547, y: 1.19, z: -0.35572243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4851576754902402}
@@ -325,6 +326,8 @@ MonoBehaviour:
   bullet: {fileID: 114851237012570376, guid: ef1739343a6901b488fe1ed3cd689019, type: 2}
   timeBetweenShot: 5
   firePoint: {fileID: 4893981436715312}
+  activeBullets: []
+  startingBullets: 0
 --- !u!114 &114641608237711344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,13 +340,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  playerId: 0
+  triggerDeadZone: 0.5
+  playerId: 1
   strengh: 10
   kickDistance: 2
   sfxKickSuccess: {fileID: 8300000, guid: c3003551c2cf3984c8b4c357287ec718, type: 3}
   sfxKickFail: {fileID: 8300000, guid: d18502014c8c51644a8ee98c5620c7cb, type: 3}
   gun: {fileID: 114614179615834270}
   playerCamera: {fileID: 0}
+  fullHp: 100
 --- !u!136 &136575163301307376
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -357,3 +362,24 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &195417607235330092
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038542928843110}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 8
+  m_Acceleration: 12
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

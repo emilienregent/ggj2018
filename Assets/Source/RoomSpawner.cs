@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomSpawner : MonoBehaviour 
+public class RoomSpawner : MonoBehaviour, IFrequency
 {
 	public Vector2				spawnDelay		= Vector2.zero;
 	public MonsterSpawner[]		spawners		= null;
@@ -13,12 +13,14 @@ public class RoomSpawner : MonoBehaviour
 	private PlayerController	_player			= null;
 
 	// Use this for initialization
+	public Frequency frequency { get; set; }
 
 	void Start ()
 	{
 		for (int i = 0; i < spawners.Length; i++)
 		{
 			spawners [i].SetRoomSpawner (this);
+			spawners [i].frequency = frequency;
 		}
 	}
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, IFrequency {
     
     public float moveSpeed = 15.0f;
     public float triggerDeadZone = 0.5f;
@@ -25,6 +25,12 @@ public class PlayerController : MonoBehaviour {
 	public float fullHp = 0f;
 	private float _hp = 0f;
 	private NavMeshAgent _agent = null;
+
+	public Frequency frequency { get; set; }
+
+	public Dungeon dungeon;
+
+	public bool isDead = false;
 
     // Use this for initialization
 
@@ -137,7 +143,14 @@ public class PlayerController : MonoBehaviour {
 
 		if (_hp <= 0f)
 		{
-			UnityEngine.Debug.Log ("GAME OVER");
+			isDead = true;
+			dungeon.PlayerDead ();
 		}
+	}
+
+	public void Resurect ()
+	{
+		isDead = false;
+		_hp = fullHp;
 	}
 }

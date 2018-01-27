@@ -159,7 +159,6 @@ public class Game : MonoBehaviour
     public void PlayWarpFx(Vector3 position, DirectionEnum direction, int currentDungeonId, int nextDungeonId)
     {
         Vector2 viewPos = cameras[currentDungeonId - 1].WorldToViewportPoint(position);
-        UnityEngine.Debug.Log("View pos is : " + viewPos);
 
         GameObject entryFx = GameObject.Instantiate<GameObject>(warpFx, viewPos, Quaternion.identity);
 

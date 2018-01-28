@@ -240,6 +240,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 			if (_player != null)
 			{
 				_player.RemoveEnemy (this);
+                _player.incrementKillCounter();
 			}
 
 			_roomSpawner.MonsterKill (this);

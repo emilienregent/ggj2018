@@ -70,6 +70,8 @@ public class GunController : MonoBehaviour {
 			newBullet.transform.rotation = firePoint [i].rotation;
 		}
 
+        player.GetComponent<PlayerController>().incrementShotCounter();
+
 		isSpecial = false;
 	}
 

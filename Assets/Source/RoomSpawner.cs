@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomSpawner : MonoBehaviour, IFrequency
 {
@@ -16,8 +18,11 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 	public PatrolWaypoint[]		patrolPath		= null;
 
-	// Use this for initialization
-	public Frequency frequency { get; set; }
+    public int NeededKills = 3;
+    public int CurrentKills = 0;
+
+    // Use this for initialization
+    public Frequency frequency { get; set; }
 
     public void StartRoom ()
 	{
@@ -67,11 +72,11 @@ public class RoomSpawner : MonoBehaviour, IFrequency
                 if(diffcheck <= 25.0f)
                 {   monsterMod = 1;}
                 else if(diffcheck < 45.0f)
-                { monsterMod = 3; }
+                { monsterMod = 2; }
                 else if (diffcheck < 65.0f)
-                { monsterMod = 6; }
+                { monsterMod = 3; }
                 else
-                { monsterMod = 9; }
+                { monsterMod = 6; }
 
                 if(monsterMod > oldmonsterMod)
                 {
@@ -80,7 +85,7 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
                 Debug.Log(monsterLimit + "MONSTER LIMIT");
                 for (int i = 0; i < monsterMod; i++)
-                { spawners[Random.Range(0, spawners.Length)].Spawn(_player); }
+                { spawners[UnityEngine.Random.Range(0, spawners.Length)].Spawn(_player); }
 				_monsterCount = _monsterCount + ( 1 * monsterMod);
 
 			}
@@ -120,5 +125,11 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 	public void MonsterKill(EnemyController enemyController)
 	{
 		_monsterCount--;
-	}
+        CurrentKills++;
+            if(CurrentKills >= NeededKills)
+        {
+            SceneManager.LoadScene(3);
+
+        }
+    }
 }

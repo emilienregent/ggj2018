@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,6 +35,7 @@ public class Game : MonoBehaviour
 	public Dungeon[] dungeons = null;
     public Camera[] cameras = null;
     public UI_Control ui_control;
+
 
     private void Awake()
     {
@@ -113,6 +115,12 @@ public class Game : MonoBehaviour
 
         return DirectionEnum.NONE;
     }
+
+    internal static void incrementKillCounter()
+    {
+        throw new NotImplementedException();
+    }
+
     public void registerPlayer(PlayerController Player)
     {
         ui_control.registerPlayer(Player);

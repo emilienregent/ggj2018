@@ -543,6 +543,8 @@ GameObject:
   - component: {fileID: 4374749950124216}
   - component: {fileID: 33578855868786604}
   - component: {fileID: 23100707962653076}
+  - component: {fileID: 114501703084305822}
+  - component: {fileID: 114900435284741906}
   m_Layer: 0
   m_Name: Wizzard_Hat
   m_TagString: Untagged
@@ -1358,6 +1360,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114501703084305822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940703393342150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfd6f25bc661b5428064a60e326788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  frequency: 0
+  _matIndex: 3
 --- !u!114 &114614179615834270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1409,12 +1425,32 @@ MonoBehaviour:
   gun: {fileID: 114614179615834270}
   playerCamera: {fileID: 0}
   fullHp: 100
+  _hp: 0
   dungeon: {fileID: 0}
   isDead: 0
   normalSpeed: 8
   deadSpeed: 16
   damage: 10
   animControl: {fileID: 95074422276236478}
+  killCounter: 0
+  kickCounter: 0
+  shotCounter: 0
+  hitCounter: 0
+  healCounter: 0
+--- !u!114 &114900435284741906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1940703393342150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfd6f25bc661b5428064a60e326788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  frequency: 0
+  _matIndex: 1
 --- !u!136 &136575163301307376
 CapsuleCollider:
   m_ObjectHideFlags: 1

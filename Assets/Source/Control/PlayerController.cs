@@ -275,7 +275,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     }
 
     private List<T> GetInFrontElements<T>(string tag) {
-        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(transform.position.x, 2.5f, transform.position.z), kickDistance);
+        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(transform.position.x, 0.5f, transform.position.z), kickDistance);
 
         List<T> closeElements = new List<T>();
 

@@ -17,7 +17,6 @@ public class PlayerSelectionManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-
         for(int i = 0; i < players.Length; i++)
         {
             PlayerPrefs.DeleteKey("Player_" + players[i].playerId + "_controller");
@@ -40,14 +39,19 @@ public class PlayerSelectionManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        int count = 0;
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i].ready == true)
+                count++;
+        }
+
+        _playersReady = count;
+
         if (Input.GetButtonDown("Submit"))
         {
             #if NO_CONTROLLER
-            _playersReady += 2;
-
-            PlayerPrefs.SetInt("Player_" + players[0].playerId + "_controller", 1);
-            players[0].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.white);
-            pressAButtonLabels[0].GetComponentInChildren<Text>().text = "Ready !";
+            SelectPlayer(players[0], 0, 1);
             #endif
 
             for (int joystickId = 1; joystickId < _cJoysticks + 1; joystickId++)
@@ -60,9 +64,7 @@ public class PlayerSelectionManager : MonoBehaviour {
                     {
                         if (PlayerPrefs.HasKey("Player_" + players[i].playerId + "_controller") == false)
                         {
-                            PlayerPrefs.SetInt("Player_" + players[i].playerId + "_controller", joystickId);
-                            pressAButtonLabels[i].GetComponentInChildren<Text>().text = "Ready !";
-                            _playersReady++;
+                            SelectPlayer(players[i], i, joystickId);
                             if (_playersReady > 1)
                             {
                                 pressStart.gameObject.SetActive(true);
@@ -89,7 +91,7 @@ public class PlayerSelectionManager : MonoBehaviour {
         {
             if (_isTutorial == false)
             {
-                tutorial.gameObject.SetActive(true);
+                //tutorial.gameObject.SetActive(true);
                 _isTutorial = true;
             }
             else
@@ -97,5 +99,12 @@ public class PlayerSelectionManager : MonoBehaviour {
                 SceneManager.LoadScene(2);
             }
         }
+    }
+
+    private void SelectPlayer(PlayerSelectionController player, int playerIndex, int joystickId)
+    {
+        PlayerPrefs.SetInt("Player_" + player.playerId + "_controller", joystickId);
+
+        player.Select();
     }
 }

@@ -156,6 +156,15 @@ Prefab:
       propertyPath: m_Name
       value: 'Player #1'
       objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: playerText
+      value: 
+      objectReference: {fileID: 1873414779}
+    - target: {fileID: 4177697830637620, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0
@@ -313,6 +322,7 @@ GameObject:
   - component: {fileID: 451887978}
   - component: {fileID: 451887977}
   - component: {fileID: 451887976}
+  - component: {fileID: 451887975}
   m_Layer: 0
   m_Name: 'Camera Player #2'
   m_TagString: MainCamera
@@ -320,6 +330,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &451887975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 451887974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4dcd969bb75334ab62a6ae901a6bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 2
 --- !u!124 &451887976
 Behaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +530,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114220526511176588, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: _frequency
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: playerText
+      value: 
+      objectReference: {fileID: 1190174697}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0
@@ -711,6 +743,7 @@ GameObject:
   - component: {fileID: 847274995}
   - component: {fileID: 847274994}
   - component: {fileID: 847274993}
+  - component: {fileID: 847274992}
   m_Layer: 0
   m_Name: 'Camera Player #3'
   m_TagString: MainCamera
@@ -718,6 +751,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &847274992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847274991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4dcd969bb75334ab62a6ae901a6bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 4
 --- !u!124 &847274993
 Behaviour:
   m_ObjectHideFlags: 0
@@ -969,6 +1014,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114220526511176588, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: _frequency
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: playerText
+      value: 
+      objectReference: {fileID: 1432502442}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0
@@ -1147,6 +1202,7 @@ GameObject:
   - component: {fileID: 1189879465}
   - component: {fileID: 1189879464}
   - component: {fileID: 1189879463}
+  - component: {fileID: 1189879467}
   m_Layer: 0
   m_Name: 'Camera Player #1'
   m_TagString: MainCamera
@@ -1217,6 +1273,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1189879467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1189879462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4dcd969bb75334ab62a6ae901a6bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 1
 --- !u!1 &1190174695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,6 +1518,7 @@ GameObject:
   - component: {fileID: 1372115603}
   - component: {fileID: 1372115602}
   - component: {fileID: 1372115601}
+  - component: {fileID: 1372115600}
   m_Layer: 0
   m_Name: 'Camera Player #4'
   m_TagString: MainCamera
@@ -1457,6 +1526,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1372115600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372115599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4dcd969bb75334ab62a6ae901a6bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 8
 --- !u!124 &1372115601
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1770,6 +1851,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114220526511176588, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: _frequency
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: playerText
+      value: 
+      objectReference: {fileID: 1432502442}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0

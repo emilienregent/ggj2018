@@ -24,7 +24,7 @@ public class StatController : MonoBehaviour {
 
         if (killPlayerId != 0)
         {
-            texts[0].text = "KILLS" + killCounter.ToString();
+            texts[0].text = "KILLS " + killCounter.ToString();
             texts[0].GetComponent<CanvasColorBehaviour>().SetFrequency(frequencies[killPlayerId - 1]);
             players[killPlayerId - 1].SetActive(true);
         }
@@ -33,7 +33,7 @@ public class StatController : MonoBehaviour {
 
         if (kickPlayerId != 0)
         {
-            texts[1].text = "KICKS" + kickCounter.ToString();
+            texts[1].text = "KICKS " + kickCounter.ToString();
             texts[1].GetComponent<CanvasColorBehaviour>().SetFrequency(frequencies[kickPlayerId - 1]);
             players[kickPlayerId - 1].SetActive(true);
         }
@@ -42,7 +42,7 @@ public class StatController : MonoBehaviour {
 
         if (shotPlayerId != 0)
         {
-            texts[2].text = "SHOTS" + shotCounter.ToString();
+            texts[2].text = "SHOTS " + shotCounter.ToString();
             texts[2].GetComponent<CanvasColorBehaviour>().SetFrequency(frequencies[shotPlayerId - 1]);
             players[shotPlayerId - 1].SetActive(true);
         }
@@ -51,7 +51,7 @@ public class StatController : MonoBehaviour {
 
         if (hitPlayerId != 0)
         {
-            texts[3].text = "HITS" + hitCounter.ToString();
+            texts[3].text = "HITS " + hitCounter.ToString();
             texts[3].GetComponent<CanvasColorBehaviour>().SetFrequency(frequencies[hitPlayerId - 1]);
             players[hitPlayerId - 1].SetActive(true);
         }

@@ -12,20 +12,8 @@ public class PlayerSelectionController : MonoBehaviour {
 
     public void Select()
     {
-        doors.SetTrigger("OpenDoor");
-
-        StartCoroutine("OnCompleteAnimation");
-    }
-
-    IEnumerator OnCompleteAnimation()
-    {
-        while(doors.GetCurrentAnimatorStateInfo(0).IsName("Empty"))
-            yield return null;
-        
-        while(doors.GetCurrentAnimatorStateInfo(0).normalizedTime < .5f)
-            yield return null;
-
         ready = true;
         playerText.text = "Ready !";
+        doors.SetTrigger("OpenDoor");
     }
 }

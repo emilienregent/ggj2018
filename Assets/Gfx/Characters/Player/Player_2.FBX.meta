@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: e466f2d9f4a65fe48bd3d28ccee3e9a4
+timeCreated: 1517132203
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Archer_Hat
+    100002: Bip
+    100004: Bip Footsteps
+    100006: Bip Head
+    100008: Bip HeadNub
+    100010: Bip L Calf
+    100012: Bip L Clavicle
+    100014: Bip L Finger0
+    100016: Bip L Finger0Nub
+    100018: Bip L Foot
+    100020: Bip L Forearm
+    100022: Bip L Hand
+    100024: Bip L Thigh
+    100026: Bip L Toe0
+    100028: Bip L Toe0Nub
+    100030: Bip L UpperArm
+    100032: Bip Neck
+    100034: Bip Pelvis
+    100036: Bip R Calf
+    100038: Bip R Clavicle
+    100040: Bip R Finger0
+    100042: Bip R Finger0Nub
+    100044: Bip R Foot
+    100046: Bip R Forearm
+    100048: Bip R Hand
+    100050: Bip R Thigh
+    100052: Bip R Toe0
+    100054: Bip R Toe0Nub
+    100056: Bip R UpperArm
+    100058: Bip Spine
+    100060: Bip Spine1
+    100062: Crossbow
+    100064: Crossbow_Feathers
+    100066: Crossbow_Rope
+    100068: Object001
+    100070: Player
+    100072: //RootNode
+    400000: Archer_Hat
+    400002: Bip
+    400004: Bip Footsteps
+    400006: Bip Head
+    400008: Bip HeadNub
+    400010: Bip L Calf
+    400012: Bip L Clavicle
+    400014: Bip L Finger0
+    400016: Bip L Finger0Nub
+    400018: Bip L Foot
+    400020: Bip L Forearm
+    400022: Bip L Hand
+    400024: Bip L Thigh
+    400026: Bip L Toe0
+    400028: Bip L Toe0Nub
+    400030: Bip L UpperArm
+    400032: Bip Neck
+    400034: Bip Pelvis
+    400036: Bip R Calf
+    400038: Bip R Clavicle
+    400040: Bip R Finger0
+    400042: Bip R Finger0Nub
+    400044: Bip R Foot
+    400046: Bip R Forearm
+    400048: Bip R Hand
+    400050: Bip R Thigh
+    400052: Bip R Toe0
+    400054: Bip R Toe0Nub
+    400056: Bip R UpperArm
+    400058: Bip Spine
+    400060: Bip Spine1
+    400062: Crossbow
+    400064: Crossbow_Feathers
+    400066: Crossbow_Rope
+    400068: Object001
+    400070: Player
+    400072: //RootNode
+    2100000: Player_Pants
+    2100002: Player
+    2100004: Player_Leaves
+    2100006: Player_Eyes
+    2100008: Crossbow
+    2100010: Crossbow_Feathers
+    2100012: Crossbow_Rope
+    2100014: Archer_Hair
+    2100016: Archer_Rope
+    2100018: Archer_Feather00
+    2100020: Archer_Feather01
+    2300000: Archer_Hat
+    2300002: Crossbow
+    2300004: Crossbow_Feathers
+    2300006: Crossbow_Rope
+    3300000: Archer_Hat
+    3300002: Crossbow
+    3300004: Crossbow_Feathers
+    3300006: Crossbow_Rope
+    4300000: Player
+    4300002: Crossbow
+    4300004: Crossbow_Feathers
+    4300006: Crossbow_Rope
+    4300008: Archer_Hat
+    9500000: //RootNode
+    13700000: Player
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

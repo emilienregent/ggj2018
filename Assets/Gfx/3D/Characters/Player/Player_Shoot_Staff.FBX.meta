@@ -1,49 +1,101 @@
 fileFormatVersion: 2
-guid: d167216be6b394443bc8957d963d4c05
-timeCreated: 1517094105
+guid: 3ffc1a7a697fd3a438c252eaa429323f
+timeCreated: 1517077645
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Beetle
-    100002: //RootNode
-    100004: Bone001
-    100006: Bone002
-    100008: Bone004
-    100010: Bone005
-    100012: Bone007
-    100014: Bone008
-    100016: Bone010
-    100018: Bone011
-    100020: Bone013
-    100022: Bone014
-    100024: Bone016
-    100026: Bone017
-    100028: HeadBone
-    100030: MainBone
-    400000: //RootNode
-    400002: Beetle
-    400004: Bone001
-    400006: Bone002
-    400008: Bone004
-    400010: Bone005
-    400012: Bone007
-    400014: Bone008
-    400016: Bone010
-    400018: Bone011
-    400020: Bone013
-    400022: Bone014
-    400024: Bone016
-    400026: Bone017
-    400028: HeadBone
-    400030: MainBone
-    2100000: Beetle
-    2100002: BeetleHull
-    2100004: BeetleEyes
-    4300000: Beetle
-    7400000: Beetle_Walk
+    100000: Bip
+    100002: Bip Footsteps
+    100004: Bip Head
+    100006: Bip HeadNub
+    100008: Bip L Calf
+    100010: Bip L Clavicle
+    100012: Bip L Finger0
+    100014: Bip L Finger0Nub
+    100016: Bip L Foot
+    100018: Bip L Forearm
+    100020: Bip L Hand
+    100022: Bip L Thigh
+    100024: Bip L Toe0
+    100026: Bip L Toe0Nub
+    100028: Bip L UpperArm
+    100030: Bip Neck
+    100032: Bip Pelvis
+    100034: Bip R Calf
+    100036: Bip R Clavicle
+    100038: Bip R Finger0
+    100040: Bip R Finger0Nub
+    100042: Bip R Foot
+    100044: Bip R Forearm
+    100046: Bip R Hand
+    100048: Bip R Thigh
+    100050: Bip R Toe0
+    100052: Bip R Toe0Nub
+    100054: Bip R UpperArm
+    100056: Bip Spine
+    100058: Bip Spine1
+    100060: Player
+    100062: Player_01
+    100064: //RootNode
+    100066: Weapon
+    100068: Wand
+    100070: Wand_Orb
+    400000: Bip
+    400002: Bip Footsteps
+    400004: Bip Head
+    400006: Bip HeadNub
+    400008: Bip L Calf
+    400010: Bip L Clavicle
+    400012: Bip L Finger0
+    400014: Bip L Finger0Nub
+    400016: Bip L Foot
+    400018: Bip L Forearm
+    400020: Bip L Hand
+    400022: Bip L Thigh
+    400024: Bip L Toe0
+    400026: Bip L Toe0Nub
+    400028: Bip L UpperArm
+    400030: Bip Neck
+    400032: Bip Pelvis
+    400034: Bip R Calf
+    400036: Bip R Clavicle
+    400038: Bip R Finger0
+    400040: Bip R Finger0Nub
+    400042: Bip R Foot
+    400044: Bip R Forearm
+    400046: Bip R Hand
+    400048: Bip R Thigh
+    400050: Bip R Toe0
+    400052: Bip R Toe0Nub
+    400054: Bip R UpperArm
+    400056: Bip Spine
+    400058: Bip Spine1
+    400060: Player
+    400062: Player_01
+    400064: //RootNode
+    400066: Weapon
+    400068: Wand
+    400070: Wand_Orb
+    2100000: Player
+    2100002: No Name
+    2100004: Wand
+    2100006: Wand_Orb
+    2300000: Weapon
+    2300002: Wand
+    2300004: Wand_Orb
+    3300000: Weapon
+    3300002: Wand
+    3300004: Wand_Orb
+    4300000: Player
+    4300002: Weapon
+    4300004: Player_01
+    4300006: Wand
+    4300008: Wand_Orb
+    7400000: Player_Shoot_Staff
     9500000: //RootNode
-    13700000: Beetle
+    13700000: Player
+    13700002: Player_01
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -72,17 +124,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Beetle_Walk
+      name: Player_Shoot_Staff
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

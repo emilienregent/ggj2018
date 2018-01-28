@@ -246,7 +246,7 @@ MonoBehaviour:
   dashDirection: {x: 0, y: 0, z: 0}
   isDashing: 0
   canDash: 1
-  sightAngle: 360
+  sightAngle: 180
   playerId: 1
   strengh: 100
   kickDistance: 2

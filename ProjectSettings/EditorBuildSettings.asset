@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Proto/Victory_Menu.unity
     guid: 960e838ecbef01146a7aeeba51a22672
+  - enabled: 1
+    path: Assets/Scenes/Proto/GameOver_Menu.unity
+    guid: 7ce80b0f45eee4756bf4c99aa6d658c5

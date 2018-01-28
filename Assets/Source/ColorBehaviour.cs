@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Renderer))]
+//[RequireComponent(typeof(Renderer))]
 public class ColorBehaviour : MonoBehaviour
 {
     public static readonly Color YELLOW = Color.yellow;

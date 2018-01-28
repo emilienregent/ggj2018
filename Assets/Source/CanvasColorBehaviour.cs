@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(CanvasRenderer))]
+[RequireComponent(typeof(Graphic))]
 public class CanvasColorBehaviour : ColorBehaviour
 {
     private Graphic _graphic = null;
@@ -17,6 +17,6 @@ public class CanvasColorBehaviour : ColorBehaviour
         else if (frequency == Frequency.Hz3)    color = GREEN * _color;
         else if (frequency == Frequency.Hz4)    color = BLUE * _color;
 
-        _graphic.color = _color;
+        _graphic.color = color;
     }
 }

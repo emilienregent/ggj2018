@@ -72,7 +72,7 @@ public class Game : MonoBehaviour
 	public void PlayerDead (PlayerController player)
 	{
         LifePool -= 1;
-        Debug.Log(LifePool);
+        //Debug.Log(LifePool);
         //fullPoolHp -= player.fullHp;
 
 		if (LifePool > 0f)
@@ -83,9 +83,65 @@ public class Game : MonoBehaviour
 		else
         {
             UnityEngine.Debug.Log("Game Over");
+
+
+            int killCounter = 0;    int killPlayerId = 0;
+            int kickCounter = 0;    int kickPlayerId = 0;
+            int shotCounter = 0;    int shotPlayerId = 0;
+            float hitCounter = 0;   int hitPlayerId = 0;
+            float healCounter = 0;  int healPlayerId = 0;
+
+            for (int i = 0; i < dungeons.Length; ++i)
+            {
+                if (dungeons[i].playerController != null)
+                {
+                    if (dungeons[i].playerController.GetKillCounter() > killCounter)
+                    {
+                        killCounter = dungeons[i].playerController.GetKillCounter();
+                        killPlayerId = dungeons[i].playerController.playerId;
+                    }
+
+                    if (dungeons[i].playerController.GetKickCounter() > kickCounter)
+                    {
+                        kickCounter = dungeons[i].playerController.GetKickCounter();
+                        kickPlayerId = dungeons[i].playerController.playerId;
+                    }
+
+                    if (dungeons[i].playerController.GetShotCounter() > shotCounter)
+                    {
+                        shotCounter = dungeons[i].playerController.GetShotCounter();
+                        shotPlayerId = dungeons[i].playerController.playerId;
+                    }
+
+                    if (dungeons[i].playerController.GetHealCounter() > healCounter)
+                    {
+                        healCounter = dungeons[i].playerController.GetHealCounter();
+                        healPlayerId = dungeons[i].playerController.playerId;
+                    }
+
+                    if (dungeons[i].playerController.GetHitCounter() > hitCounter)
+                    {
+                        hitCounter = dungeons[i].playerController.GetHitCounter();
+                        hitPlayerId = dungeons[i].playerController.playerId;
+                    }
+                }
+            }
+
+            PlayerPrefs.SetInt("killPlayerId", killPlayerId);
+            PlayerPrefs.SetInt("kickPlayerId", kickPlayerId);
+            PlayerPrefs.SetInt("shotPlayerId", shotPlayerId);
+            PlayerPrefs.SetInt("healPlayerId", healPlayerId);
+            PlayerPrefs.SetInt("hitPlayerId", hitPlayerId);
+
+            PlayerPrefs.SetInt("killCounter", killCounter);
+            PlayerPrefs.SetInt("kickCounter", kickCounter);
+            PlayerPrefs.SetInt("shotCounter", shotCounter);
+            PlayerPrefs.SetInt("healCounter", (int)healCounter);
+            PlayerPrefs.SetInt("hitCounter", (int)hitCounter);
+
             // Go back to the menu scene
-            // TODO : Doing something better
-            SceneManager.LoadScene(0);
+            // TODO : Doing something better. Done.
+            SceneManager.LoadScene(4);
         }
 	}
 	

@@ -8,11 +8,13 @@ public class PlayerSelectionManager : MonoBehaviour {
 
     public PlayerSelectionController[] players;
     public CanvasRenderer pressStart;
+    public CanvasRenderer pressStartTuto;
     public CanvasRenderer tutorial;
     public CanvasRenderer[] pressAButtonLabels;
     private int _cJoysticks;
     private int _playersReady = 0;
     private bool _isTutorial = false;
+    private bool _hasAtLeastOnePlayerReady = false;
 
 	// Use this for initialization
 	void Start ()
@@ -46,7 +48,7 @@ public class PlayerSelectionManager : MonoBehaviour {
                 count++;
         }
 
-        if (count != _playersReady && _playersReady > 1)
+        if (_hasAtLeastOnePlayerReady == false && _playersReady > 1)
         {
             pressStart.gameObject.SetActive(true);
 
@@ -54,6 +56,8 @@ public class PlayerSelectionManager : MonoBehaviour {
             Debug.Log("Player 2 use controler : " + PlayerPrefs.GetInt("Player_2_controller"));
             Debug.Log("Player 3 use controler : " + PlayerPrefs.GetInt("Player_3_controller"));
             Debug.Log("Player 4 use controler : " + PlayerPrefs.GetInt("Player_4_controller"));
+
+            _hasAtLeastOnePlayerReady = true;
         }
 
         _playersReady = count;
@@ -97,6 +101,7 @@ public class PlayerSelectionManager : MonoBehaviour {
             }
             else
             {
+                pressStartTuto.GetComponentInChildren<Text>().text = "Loading ...";
                 SceneManager.LoadScene(2);
             }
         }

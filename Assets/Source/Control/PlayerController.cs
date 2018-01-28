@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 	public GameObject[] characterModels = null;
 
+	public BulletController[] characterBullets = null;
+
     // Use this for initialization
 
     private void Start () {
@@ -111,11 +113,13 @@ public class PlayerController : MonoBehaviour, IFrequency {
         sfxAudioSource = GetComponent<AudioSource>();
         
         _controllerId = PlayerPrefs.GetInt("Player_" + playerId + "_controller", 1);
-
+		gun.bullet = characterBullets [Random.Range (0, characterBullets.Length)];
 		gun.gunOriginCamera = playerCamera;
 		gun.gunFrequency = frequency;
 		gun.bulletDamage = damage;
 		gun.currentDungeonId = dungeon.id;
+
+
     }
 
     // Update is called once per frame

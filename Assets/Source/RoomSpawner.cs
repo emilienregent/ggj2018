@@ -18,7 +18,7 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 	public PatrolWaypoint[]		patrolPath		= null;
 
-    public int NeededKills = 3;
+    public int NeededKills = 50;
     public int CurrentKills = 0;
 
     // Use this for initialization

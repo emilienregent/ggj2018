@@ -11,6 +11,8 @@ public class CameraColorBehaviour : MonoBehaviour
 
     public void Start()
     {
+        _camera = GetComponent<Camera>();
+
         Color color = Color.white;
         if (frequency == Frequency.Hz1)         color = ColorBehaviour.YELLOW * _color;
         else if (frequency == Frequency.Hz2)    color = ColorBehaviour.RED * _color;

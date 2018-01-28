@@ -97,7 +97,12 @@ public class PlayerController : MonoBehaviour, IFrequency {
         Rotate();
 
         // FIRE
-        gun.isFiring = Input.GetButtonDown("Player_" + _controllerId + "_Fire1");
+        bool previouslyFiring = gun.isFiring;
+        gun.isFiring = Input.GetButton("Player_" + _controllerId + "_Fire1");
+        if(previouslyFiring != gun.isFiring)
+        {
+            animControl.SetBool("Shoot", gun.isFiring);
+        }
 
         // DASH
         if (Input.GetButtonDown("Player_" + _controllerId + "_Dash") && canDash)
@@ -154,12 +159,12 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	{
 		Vector3 heading = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
 		_agent.destination = transform.position + heading.normalized;
-        if(Input.GetAxis("Player_" + _controllerId + "_Horizontal") != 0 || Input.GetAxis("Player_" + _controllerId + "_Vertical") != 0)
+        if(_agent.hasPath == true)
         {
-            animControl.SetTrigger("Player_Run_Idle");
+            animControl.SetInteger("Speed", 1);
         } else
         {
-            animControl.SetTrigger("Player_Idle");
+            animControl.SetInteger("Speed", 0);
         }
     }
 
@@ -213,7 +218,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     {
         List<EnemyController> closeEnemies = GetInFrontElements<EnemyController>("monster");
 
-        animControl.SetTrigger("Player_Kick");
+        animControl.SetTrigger("Kick");
 
         for (int i = 0; i < closeEnemies.Count; ++i)
         {

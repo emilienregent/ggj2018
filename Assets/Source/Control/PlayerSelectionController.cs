@@ -7,7 +7,6 @@ public class PlayerSelectionController : MonoBehaviour {
 
     public int playerId;
     public Animator doors;
-    public ColorBehaviour colorBehaviour;
     public Text playerText = null;
     [HideInInspector] public bool ready = false;
 

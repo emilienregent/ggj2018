@@ -64,6 +64,7 @@ public class BulletController : MonoBehaviour {
 					collider.gameObject.GetComponent<EnemyController> ().HitByBullet (this);
 				}				
 			}
+
 			else if (hitTag == "player")
 				collider.gameObject.GetComponent<PlayerController> ().Hit (damage);
 			

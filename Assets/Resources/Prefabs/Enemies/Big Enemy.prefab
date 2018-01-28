@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFiring: 0
-  bullet: {fileID: 114944386109503038, guid: e3020271ab843f54da9fd210be051495, type: 2}
+  bullet: {fileID: 114462847917640674, guid: dce75e005561be9489edf6e121d3bbfb, type: 2}
   timeBetweenShot: 0
   firePoint:
   - {fileID: 4993137894051136}
@@ -638,6 +638,7 @@ MonoBehaviour:
   currentDungeonId: 0
   bulletDamage: 0
   isSpecial: 0
+  hitTag: player
 --- !u!114 &114436045651684882
 MonoBehaviour:
   m_ObjectHideFlags: 1

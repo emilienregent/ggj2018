@@ -25,6 +25,8 @@ public class GunController : MonoBehaviour {
 	public float bulletDamage = 0f;
 	public bool isSpecial = false;
 
+	public string hitTag = "";
+
 
     // Use this for initialization
     private void Start () {
@@ -68,6 +70,11 @@ public class GunController : MonoBehaviour {
 			newBullet.currentDungeonId = currentDungeonId;
 			newBullet.transform.position = firePoint [i].position;
 			newBullet.transform.rotation = firePoint [i].rotation;
+			newBullet.hitTag = hitTag;
+
+			TrailRenderer[] trails = newBullet.GetComponentsInChildren<TrailRenderer> ();
+			for (int t = 0; t < trails.Length; t++)
+				trails[t].Clear ();
 		}
 
 		isSpecial = false;

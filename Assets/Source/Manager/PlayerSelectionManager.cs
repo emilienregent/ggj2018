@@ -8,9 +8,11 @@ public class PlayerSelectionManager : MonoBehaviour {
 
     public PlayerSelectionController[] players;
     public CanvasRenderer pressStart;
+    public CanvasRenderer tutorial;
     public CanvasRenderer[] pressAButtonLabels;
     private int _cJoysticks;
     private int _playersReady = 0;
+    private bool _isTutorial = false;
 
 	// Use this for initialization
 	void Start ()
@@ -28,6 +30,11 @@ public class PlayerSelectionManager : MonoBehaviour {
             pressAButtonLabels[j].gameObject.SetActive(true);
         }
 
+        #if NO_CONTROLLER
+        players[0].gameObject.SetActive(true);
+        pressAButtonLabels[0].gameObject.SetActive(true);
+        #endif
+
     }
 	
 	// Update is called once per frame
@@ -35,13 +42,20 @@ public class PlayerSelectionManager : MonoBehaviour {
 
         if (Input.GetButtonDown("Submit"))
         {
+            #if NO_CONTROLLER
+            _playersReady += 2;
+
+            PlayerPrefs.SetInt("Player_" + players[0].playerId + "_controller", 1);
+            players[0].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.white);
+            pressAButtonLabels[0].GetComponentInChildren<Text>().text = "Ready !";
+            #endif
 
             for (int joystickId = 1; joystickId < _cJoysticks + 1; joystickId++)
             {
-                Debug.Log("Is controller " + joystickId + " is pressing A ?");
+                //Debug.Log("Is controller " + joystickId + " is pressing A ?");
                 if (Input.GetButtonDown("Joystick" + joystickId + "Submit"))
                 {
-                    Debug.Log("Controller " + joystickId + " is pressing A");
+                    //Debug.Log("Controller " + joystickId + " is pressing A");
                     for (int i = 0; i < players.Length; i++)
                     {
                         if (PlayerPrefs.HasKey("Player_" + players[i].playerId + "_controller") == false)
@@ -72,10 +86,17 @@ public class PlayerSelectionManager : MonoBehaviour {
             PlayerPrefs.Save();
         }
 
-        if(Input.GetButtonDown("JoystickStart") && _playersReady > 1)
+        if((Input.GetButtonDown("JoystickStart") || Input.GetButtonDown("Submit")) && _playersReady > 1)
         {
-            SceneManager.LoadScene(2);
+            if (_isTutorial == false)
+            {
+                tutorial.gameObject.SetActive(true);
+                _isTutorial = true;
+            }
+            else
+            {
+                SceneManager.LoadScene(2);
+            }
         }
-
     }
 }

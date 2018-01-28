@@ -61,7 +61,6 @@ public class PlayerSelectionManager : MonoBehaviour {
                         if (PlayerPrefs.HasKey("Player_" + players[i].playerId + "_controller") == false)
                         {
                             PlayerPrefs.SetInt("Player_" + players[i].playerId + "_controller", joystickId);
-                            players[i].GetComponent<MeshRenderer>().material.SetColor("_Color", Color.white);
                             pressAButtonLabels[i].GetComponentInChildren<Text>().text = "Ready !";
                             _playersReady++;
                             if (_playersReady > 1)

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3ffc1a7a697fd3a438c252eaa429323f
-timeCreated: 1517077645
+guid: bc6410d22bba01749b535901a00a519d
+timeCreated: 1517126691
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -38,9 +38,8 @@ ModelImporter:
     100060: Player
     100062: Player_01
     100064: //RootNode
-    100066: Weapon
-    100068: Wand
-    100070: Wand_Orb
+    100066: Wand
+    100068: Wand_Orb
     400000: Bip
     400002: Bip Footsteps
     400004: Bip Head
@@ -74,25 +73,20 @@ ModelImporter:
     400060: Player
     400062: Player_01
     400064: //RootNode
-    400066: Weapon
-    400068: Wand
-    400070: Wand_Orb
+    400066: Wand
+    400068: Wand_Orb
     2100000: Player
-    2100002: No Name
-    2100004: Wand
-    2100006: Wand_Orb
-    2300000: Weapon
-    2300002: Wand
-    2300004: Wand_Orb
-    3300000: Weapon
-    3300002: Wand
-    3300004: Wand_Orb
+    2100002: Wand
+    2100004: Wand_Orb
+    2300000: Wand
+    2300002: Wand_Orb
+    3300000: Wand
+    3300002: Wand_Orb
     4300000: Player
-    4300002: Weapon
-    4300004: Player_01
-    4300006: Wand
-    4300008: Wand_Orb
-    7400000: Player_Shoot_Staff
+    4300002: Wand
+    4300004: Wand_Orb
+    4300006: Player_01
+    7400000: Player_Idle_Selection
     9500000: //RootNode
     13700000: Player
     13700002: Player_01
@@ -124,10 +118,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Player_Shoot_Staff
+      name: Player_Idle_Selection
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

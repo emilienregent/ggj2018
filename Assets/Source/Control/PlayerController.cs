@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
     public  AudioClip   sfxKickSuccess;
     public  AudioClip   sfxKickFail;
-    private AudioSource sfxAudioSource;
+    public  AudioClip   sfxShoot;
+    public AudioSource sfxAudioSource;
 
     public GunController gun;
     public Camera playerCamera;

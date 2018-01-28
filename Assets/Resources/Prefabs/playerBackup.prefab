@@ -252,6 +252,8 @@ MonoBehaviour:
   kickDistance: 2
   sfxKickSuccess: {fileID: 8300000, guid: c3003551c2cf3984c8b4c357287ec718, type: 3}
   sfxKickFail: {fileID: 8300000, guid: d18502014c8c51644a8ee98c5620c7cb, type: 3}
+  sfxShoot: {fileID: 8300000, guid: c0036b1184256054ab68e7442ccf8182, type: 3}
+  sfxAudioSource: {fileID: 0}
   gun: {fileID: 114614179615834270}
   playerCamera: {fileID: 0}
   fullHp: 100

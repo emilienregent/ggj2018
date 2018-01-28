@@ -79,7 +79,10 @@ public class GunController : MonoBehaviour {
 
         if(player.tag == "player")
         {
-            player.GetComponent<PlayerController>().incrementShotCounter();
+            PlayerController _playerController = player.GetComponent<PlayerController>();
+            _playerController.incrementShotCounter();
+            _playerController.sfxAudioSource.clip = _playerController.sfxShoot;
+            _playerController.sfxAudioSource.Play();
         }
 
         isSpecial = false;

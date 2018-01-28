@@ -272,6 +272,9 @@ MonoBehaviour:
   - {fileID: 1055082956909992, guid: 7748473760ac26343abb93751f30dfb1, type: 2}
   - {fileID: 1768738901319396, guid: 43df39373ee66084e90be13dacf40d2e, type: 2}
   - {fileID: 1239772656040748, guid: 190e72ce609357745bf10a24226ef82b, type: 2}
+  characterBullets:
+  - {fileID: 114907031947744576, guid: 49f4ad5ade50f26488fc34b47644d7ea, type: 2}
+  - {fileID: 114636605788375144, guid: 98f2f2af09d975d48a3c0dcd5f3b9102, type: 2}
 --- !u!136 &136575163301307376
 CapsuleCollider:
   m_ObjectHideFlags: 1

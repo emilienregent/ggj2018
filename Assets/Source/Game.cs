@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -34,6 +35,7 @@ public class Game : MonoBehaviour
 	public Dungeon[] dungeons = null;
     public Camera[] cameras = null;
     public UI_Control ui_control;
+
 
     private void Awake()
     {
@@ -95,7 +97,13 @@ public class Game : MonoBehaviour
 
     public bool IsAvailableDirection(int currentDungeonId, DirectionEnum direction)
     {
-        return direction == DirectionEnum.NONE || DUNGEONS_CONFIG[currentDungeonId].availableDirections.Contains(direction);
+        if (direction != DirectionEnum.NONE && DUNGEONS_CONFIG[currentDungeonId].availableDirections.Contains(direction) == false)
+            return false;
+
+        int dungeonId = GetDungeonId(currentDungeonId, direction);
+        int dungeonIndex = dungeonId - 1;
+
+        return dungeonIndex < dungeons.Length && dungeons[dungeonIndex].playerController != null;
     }
 
     public DirectionEnum GetDirection(int currentDungeonId, Vector3 position)
@@ -113,6 +121,12 @@ public class Game : MonoBehaviour
 
         return DirectionEnum.NONE;
     }
+
+    internal static void incrementKillCounter()
+    {
+        throw new NotImplementedException();
+    }
+
     public void registerPlayer(PlayerController Player)
     {
         ui_control.registerPlayer(Player);

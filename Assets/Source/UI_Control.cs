@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,9 @@ public class UI_Control : MonoBehaviour
     private float p3hpMax;
     private float p4hp;
     private float p4hpMax;
+
+    public Text KillScore;
+
 
     int num = 1;
 
@@ -67,6 +71,9 @@ public class UI_Control : MonoBehaviour
             p4hpMax = Player4.fullHp;
             player4health.fillAmount = p4hp / p4hpMax;
         }
+
+       // KillScore.text = Game.GetKillCounter();
+
 
     }
     public void registerPlayer(PlayerController Player)

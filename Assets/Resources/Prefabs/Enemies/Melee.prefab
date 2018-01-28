@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 54989845214836362}
   - component: {fileID: 114436045651684882}
   m_Layer: 0
-  m_Name: Big Enemy
+  m_Name: Melee
   m_TagString: monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4836853109950274}
   - component: {fileID: 137125938861867256}
-  - component: {fileID: 114753117230514026}
+  - component: {fileID: 114045515905871146}
   m_Layer: 0
   m_Name: Beetle
   m_TagString: Untagged
@@ -353,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 1486428524737190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.858}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4502999230417742}
   - {fileID: 4593260441953568}
@@ -602,6 +602,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114045515905871146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645627693234502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8042f9d6ce883074ab8b6fdfae2147a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  frequency: 0
 --- !u!114 &114230965589697592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -637,20 +650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c05f84039f70d43a9ddda3c79d1a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114753117230514026
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1645627693234502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abfd6f25bc661b5428064a60e326788c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  frequency: 0
-  _matIndex: 1
 --- !u!114 &114932819954772030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -681,10 +680,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  fullHp: 15
-  dmg: 10
+  fullHp: 20
+  dmg: 3
   hitFrequency: 0.5
-  distanceToAttack: 5
+  distanceToAttack: 0.1
   gun: {fileID: 114230965589697592}
   _attack: {fileID: 0}
 --- !u!135 &135520643222707094
@@ -770,8 +769,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
-  m_Acceleration: 8
+  m_Speed: 4
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

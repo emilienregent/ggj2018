@@ -124,5 +124,7 @@ public class GunController : MonoBehaviour {
         activeBullets.Remove(bullet);
         inactiveBullets.Push(bullet);
         bullet.gameObject.SetActive(false);
+
+        bullet.isWarping = false;
     }
 }

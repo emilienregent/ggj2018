@@ -295,7 +295,7 @@ MonoBehaviour:
   originCamera: {fileID: 0}
   currentDungeonId: 0
   hitTag: 
-  damage: 0
+  damage: 5
   special: 0
 --- !u!114 &114776265341081782
 MonoBehaviour:

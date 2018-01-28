@@ -719,10 +719,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  fullHp: 30
-  dmg: 5
-  hitFrequency: 0.5
-  distanceToAttack: 10
+  fullHp: 20
+  dmg: 2
+  hitFrequency: 2
+  distanceToAttack: 0.2
   gun: {fileID: 114465553907516028}
   _attack: {fileID: 0}
 --- !u!114 &114143395870820180
@@ -857,7 +857,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

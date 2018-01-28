@@ -18,7 +18,7 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 	public PatrolWaypoint[]		patrolPath		= null;
 
-    public int NeededKills = 50;
+    private int NeededKills = 50;
     public int CurrentKills = 0;
 
     // Use this for initialization
@@ -126,6 +126,7 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 	{
 		_monsterCount--;
         CurrentKills++;
+        Debug.Log(CurrentKills + "KILLS!!!");
             if(CurrentKills >= NeededKills)
         {
             SceneManager.LoadScene(3);

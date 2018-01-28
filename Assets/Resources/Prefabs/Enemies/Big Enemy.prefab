@@ -684,7 +684,7 @@ MonoBehaviour:
   fullHp: 15
   dmg: 10
   hitFrequency: 0.5
-  distanceToAttack: 5
+  distanceToAttack: 7
   gun: {fileID: 114230965589697592}
   _attack: {fileID: 0}
 --- !u!135 &135520643222707094
@@ -770,7 +770,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

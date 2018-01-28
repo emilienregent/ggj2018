@@ -137112,7 +137112,7 @@ MonoBehaviour:
     type: 2}
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
-  - {fileID: 114932819954772030, guid: 9877b8d275262a540ac1225b7fe34e0f, type: 2}
+  - {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75, type: 2}
   spawnDate: 0
   pourcentToSpawnBadFrequency: 25
 --- !u!114 &114019429444463840
@@ -137404,7 +137404,7 @@ MonoBehaviour:
     type: 2}
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
-  - {fileID: 114932819954772030, guid: 9877b8d275262a540ac1225b7fe34e0f, type: 2}
+  - {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75, type: 2}
   spawnDate: 0
   pourcentToSpawnBadFrequency: 25
 --- !u!114 &114076100025730086
@@ -137450,7 +137450,7 @@ MonoBehaviour:
   - {fileID: 114999699426091044}
   playerSpawn: {fileID: 114147689541054066}
   id: 1
-  _frequency: 2
+  _frequency: 1
   game: {fileID: 0}
   renderers:
   - {fileID: 0}
@@ -140107,7 +140107,7 @@ MonoBehaviour:
     type: 2}
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
-  - {fileID: 114932819954772030, guid: 9877b8d275262a540ac1225b7fe34e0f, type: 2}
+  - {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75, type: 2}
   spawnDate: 0
   pourcentToSpawnBadFrequency: 25
 --- !u!114 &114722284023147558
@@ -140802,7 +140802,7 @@ MonoBehaviour:
     type: 2}
   spawns:
   - {fileID: 114932819954772030, guid: cda9f85f5fb2c43789a8c016763ddb3d, type: 2}
-  - {fileID: 114932819954772030, guid: 9877b8d275262a540ac1225b7fe34e0f, type: 2}
+  - {fileID: 114097558832739580, guid: 213e3db6f43284c2c970c8f6a0828c75, type: 2}
   spawnDate: 0
   pourcentToSpawnBadFrequency: 25
 --- !u!114 &114870878382327882
@@ -141601,9 +141601,8 @@ MonoBehaviour:
   - {fileID: 114869833065222938}
   - {fileID: 114721939888353878}
   - {fileID: 114015887515520164}
-  monsterLimit: 4
+  monsterLimit: 8
   patrolPath:
   - {fileID: 114884163786329442}
   - {fileID: 114564341183748790}
-  NeededKills: 3
   CurrentKills: 0

@@ -97,7 +97,13 @@ public class Game : MonoBehaviour
 
     public bool IsAvailableDirection(int currentDungeonId, DirectionEnum direction)
     {
-        return direction == DirectionEnum.NONE || DUNGEONS_CONFIG[currentDungeonId].availableDirections.Contains(direction);
+        if (direction != DirectionEnum.NONE && DUNGEONS_CONFIG[currentDungeonId].availableDirections.Contains(direction) == false)
+            return false;
+
+        int dungeonId = GetDungeonId(currentDungeonId, direction);
+        int dungeonIndex = dungeonId - 1;
+
+        return dungeonIndex < dungeons.Length && dungeons[dungeonIndex].playerController != null;
     }
 
     public DirectionEnum GetDirection(int currentDungeonId, Vector3 position)

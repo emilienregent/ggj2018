@@ -153,8 +153,10 @@ public class PlayerController : MonoBehaviour, IFrequency {
             }
         }
 
-		if (isDead == true && Time.time >= _timeToResurect)
+		if (isDead == true && Time.realtimeSinceStartup >= _timeToResurect)
 		{
+			Debug.Log ("stop blink at " + Time.realtimeSinceStartup);
+			this.GetComponentInChildren<BlinkingBehaviour> ().StopBlink ();
 			isDead = false;
 			_agent.speed = normalSpeed;
 		}
@@ -275,7 +277,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     }
 
     private List<T> GetInFrontElements<T>(string tag) {
-        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(transform.position.x, 2.5f, transform.position.z), kickDistance);
+        Collider[] hitColliders = Physics.OverlapSphere(new Vector3(transform.position.x, 0.5f, transform.position.z), kickDistance);
 
         List<T> closeElements = new List<T>();
 
@@ -329,6 +331,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 		if (_hp <= 0f)
 		{
+			this.GetComponentInChildren<BlinkingBehaviour> ().StartBlink ();
 			isDead = true;
 			dungeon.PlayerDead ();
 		}
@@ -336,9 +339,12 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 	public void Resurect (float delay)
 	{
+
 		_hp = fullHp;
 		_agent.speed = deadSpeed;
 		_timeToResurect = Time.realtimeSinceStartup + delay;
+
+		Debug.Log ("resurect at " + _timeToResurect);
 	}
 
     public void heal(int amount) {

@@ -8,15 +8,15 @@ public class ColorBehaviour : MonoBehaviour
     public static readonly Color GREEN  = Color.green;
     public static readonly Color BLUE   = Color.blue;
 
-    [SerializeField] private Color _color = Color.white;
+    [SerializeField] protected Color _color = Color.white;
 
-    private Renderer _renderer = null;
+    protected Renderer _renderer = null;
     private MaterialPropertyBlock _block = null;
 
     [HideInInspector] public Frequency frequency;
 
 
-    public void SetFrequency(Frequency frequency)
+    public virtual void SetFrequency(Frequency frequency)
     {
         this.frequency = frequency;
 

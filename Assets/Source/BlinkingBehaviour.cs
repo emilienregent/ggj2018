@@ -11,12 +11,12 @@ public class BlinkingBehaviour : MonoBehaviour
 
     public void StartBlink()
     {
-        StartCoroutine(Blink());
+        StartCoroutine("Blink");
     }
 
     public void StopBlink()
     {
-        StopCoroutine(Blink());
+        StopCoroutine("Blink");
     }
 
     private IEnumerator Blink()

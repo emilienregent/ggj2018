@@ -237,7 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4836853109950274}
   - component: {fileID: 137125938861867256}
-  - component: {fileID: 114045515905871146}
+  - component: {fileID: 114753117230514026}
   m_Layer: 0
   m_Name: Beetle
   m_TagString: Untagged
@@ -602,19 +602,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114045515905871146
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1645627693234502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8042f9d6ce883074ab8b6fdfae2147a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  frequency: 0
 --- !u!114 &114230965589697592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -650,6 +637,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c05f84039f70d43a9ddda3c79d1a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114753117230514026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1645627693234502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfd6f25bc661b5428064a60e326788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  frequency: 0
+  _matIndex: 1
 --- !u!114 &114932819954772030
 MonoBehaviour:
   m_ObjectHideFlags: 1

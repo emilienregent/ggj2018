@@ -293,6 +293,8 @@ GameObject:
   - component: {fileID: 4656463902038574}
   - component: {fileID: 33524651390382912}
   - component: {fileID: 23321266687347368}
+  - component: {fileID: 114476230906283560}
+  - component: {fileID: 114489485737796812}
   m_Layer: 0
   m_Name: Wizzard_Hat
   m_TagString: Untagged
@@ -540,7 +542,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4031833867990622}
   - component: {fileID: 137197499352068106}
-  - component: {fileID: 114873883096570362}
   m_Layer: 0
   m_Name: PlayerSkinnedMesh
   m_TagString: Untagged
@@ -1973,9 +1974,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerId: 1
   doors: {fileID: 95514466463307514}
-  colorBehaviour: {fileID: 114873883096570362}
   playerText: {fileID: 0}
   ready: 0
+--- !u!114 &114476230906283560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325822238882910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfd6f25bc661b5428064a60e326788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 1, g: 1, b: 1, a: 1}
+  frequency: 0
+  _matIndex: 3
 --- !u!114 &114476601591912814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1989,6 +2003,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   frequency: 0
+--- !u!114 &114489485737796812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325822238882910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfd6f25bc661b5428064a60e326788c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  frequency: 0
+  _matIndex: 1
 --- !u!114 &114641635491363254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2014,19 +2042,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  frequency: 0
---- !u!114 &114873883096570362
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1528710637303788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8042f9d6ce883074ab8b6fdfae2147a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _color: {r: 1, g: 1, b: 1, a: 1}
   frequency: 0
 --- !u!114 &114982022870122164
 MonoBehaviour:

@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
     private Vector3 cameraOffset;
 
 	public float fullHp = 0f;
-	private float _hp = 0f;
+    [SerializeField] private float _hp = 0f;
     public float hp { get { return _hp; }  }
 
 	private NavMeshAgent _agent = null;
@@ -54,6 +54,12 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
 	public float damage = 0f;
     public Animator animControl;
+
+    [SerializeField] private int killCounter = 0;
+    [SerializeField] private int kickCounter = 0;
+    [SerializeField] private int shotCounter = 0;
+    [SerializeField] private float hitCounter = 0;
+    [SerializeField] private float healCounter = 0;
 
     // Use this for initialization
 
@@ -237,6 +243,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
         if(closeEnemies.Count > 0)
         {
             sfxAudioSource.clip = sfxKickSuccess;
+            kickCounter += 1;
         } else
         {
             sfxAudioSource.clip = sfxKickFail;
@@ -317,7 +324,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	public void Hit (float dmg)
 	{
 		_hp -= dmg;
-    
+
+        hitCounter += dmg;
 
 		if (_hp <= 0f)
 		{
@@ -334,6 +342,40 @@ public class PlayerController : MonoBehaviour, IFrequency {
 	}
 
     public void heal(int amount) {
+        if(_hp < fullHp)
+        {
+            healCounter += Mathf.Min(amount, fullHp - _hp);
+        }
         _hp = Mathf.Min(fullHp, _hp + amount);
+
+       
+    }
+
+    public int GetKillCounter() {
+        return killCounter;
+    }
+
+    public int GetKickCounter() {
+        return kickCounter;
+    }
+
+    public int GetShotCounter() {
+        return shotCounter;
+    }
+
+    public float GetHitCounter() {
+        return hitCounter;
+    }
+
+    public float GetHealCounter() {
+        return healCounter;
+    }
+
+    public void incrementShotCounter() {
+        shotCounter += 1;
+    }
+
+    public void incrementKillCounter() {
+        killCounter += 1;
     }
 }

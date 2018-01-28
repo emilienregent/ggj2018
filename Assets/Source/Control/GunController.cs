@@ -77,7 +77,12 @@ public class GunController : MonoBehaviour {
 				trails[t].Clear ();
 		}
 
-		isSpecial = false;
+        if(player.tag == "player")
+        {
+            player.GetComponent<PlayerController>().incrementShotCounter();
+        }
+
+        isSpecial = false;
 	}
 
 	public BulletController InstantiateNewBullet (BulletController prefab, Frequency frequency, Vector3 position, Quaternion rotation)

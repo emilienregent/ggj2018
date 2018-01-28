@@ -344,16 +344,16 @@ public class PlayerController : MonoBehaviour, IFrequency {
         _enemies.Remove(enemy);
     }
 
-    private void OnDrawGizmos() 
-    {
-        UnityEditor.Handles.color = Color.yellow;
+    //private void OnDrawGizmos() 
+    //{
+    //    UnityEditor.Handles.color = Color.yellow;
 
-        UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, kickDistance);
+    //    UnityEditor.Handles.DrawWireDisc(transform.position, transform.up, kickDistance);
 
-        UnityEditor.Handles.color = Color.green;
-        Vector3 fromVector = Quaternion.AngleAxis(-0.5f * sightAngle, transform.up) * transform.forward;
-        UnityEditor.Handles.DrawSolidArc(transform.position, transform.up, fromVector, sightAngle,  kickDistance);
-    }
+    //    UnityEditor.Handles.color = Color.green;
+    //    Vector3 fromVector = Quaternion.AngleAxis(-0.5f * sightAngle, transform.up) * transform.forward;
+    //    UnityEditor.Handles.DrawSolidArc(transform.position, transform.up, fromVector, sightAngle,  kickDistance);
+    //}
 
 
 	public void Hit (float dmg)

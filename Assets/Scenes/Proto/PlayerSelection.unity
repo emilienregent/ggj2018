@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -247,9 +247,19 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: doors
+      value: 
+      objectReference: {fileID: 148099839}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &148099839 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95247932631716446, guid: 4062032ab48c95145a3005aab204c3d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 148099838}
 --- !u!1 &204725744
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,9 +642,19 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: doors
+      value: 
+      objectReference: {fileID: 599874672}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &599874672 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95247932631716446, guid: 4062032ab48c95145a3005aab204c3d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 599874671}
 --- !u!1 &655921159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,9 +1148,19 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: doors
+      value: 
+      objectReference: {fileID: 1141726030}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &1141726030 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95247932631716446, guid: 4062032ab48c95145a3005aab204c3d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1141726029}
 --- !u!1 &1141816122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,9 +2005,19 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,
+        type: 2}
+      propertyPath: doors
+      value: 
+      objectReference: {fileID: 1809251373}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4062032ab48c95145a3005aab204c3d0, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &1809251373 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95247932631716446, guid: 4062032ab48c95145a3005aab204c3d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1809251372}
 --- !u!114 &1826137230 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114430030390202698, guid: 4062032ab48c95145a3005aab204c3d0,

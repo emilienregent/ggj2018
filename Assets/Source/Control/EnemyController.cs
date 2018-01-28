@@ -47,6 +47,9 @@ public class EnemyController : MonoBehaviour, IFrequency
 
 	public Attack _attack = null;
 
+    public AudioClip sfxWarp;
+    public AudioSource sfxAudioSource;
+
     private void Start()
     {
 		_agent = GetComponent<NavMeshAgent> ();
@@ -60,7 +63,10 @@ public class EnemyController : MonoBehaviour, IFrequency
 
 		_hp = fullHp;
 
-		MoveToPlayer ();
+        // Sound
+        sfxAudioSource = GetComponent<AudioSource>();
+
+        MoveToPlayer ();
     }
 
 	public void SetPlayer (PlayerController playerController)
@@ -179,6 +185,11 @@ public class EnemyController : MonoBehaviour, IFrequency
 
                     _agent.Warp(newPosition);
                     _agent.destination = _player.transform.position;
+
+                    // SFX
+                    sfxAudioSource.clip = sfxWarp;
+                    sfxAudioSource.Play();
+
                 }
             }
         }

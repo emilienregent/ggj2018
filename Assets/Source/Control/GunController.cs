@@ -70,9 +70,12 @@ public class GunController : MonoBehaviour {
 			newBullet.transform.rotation = firePoint [i].rotation;
 		}
 
-        player.GetComponent<PlayerController>().incrementShotCounter();
+        if(player.tag == "player")
+        {
+            player.GetComponent<PlayerController>().incrementShotCounter();
+        }
 
-		isSpecial = false;
+        isSpecial = false;
 	}
 
 	public BulletController InstantiateNewBullet (BulletController prefab, Frequency frequency, Vector3 position, Quaternion rotation)

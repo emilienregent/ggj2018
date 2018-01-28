@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour, IFrequency
 	public Attack _attack = null;
 
     public AudioClip sfxWarp;
+    public AudioClip sfxSwarm;
     public AudioSource sfxAudioSource;
 
     private void Start()
@@ -65,6 +66,8 @@ public class EnemyController : MonoBehaviour, IFrequency
 
         // Sound
         sfxAudioSource = GetComponent<AudioSource>();
+        sfxAudioSource.clip = sfxSwarm;
+        sfxAudioSource.Play();
 
         MoveToPlayer ();
     }

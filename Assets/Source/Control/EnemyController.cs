@@ -76,8 +76,10 @@ public class EnemyController : MonoBehaviour, IFrequency
         _currentDungeonId = _player.dungeon.id;
 
 		if (gun != null)
+		{
 			gun.gunOriginCamera = _player.playerCamera;
-
+			gun.currentDungeonId = _player.dungeon.id;
+		}
         //UnityEngine.Debug.Log("Spawn enemy " + this + " for player " + _player.playerId + " for dungeon " + _player.dungeon);
 	}
 

@@ -614,6 +614,21 @@ Prefab:
       propertyPath: pourcentToSpawnBadFrequency
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 114050543186276478, guid: f2a28b4b8bdd74c8fbc6827dd8cd813c,
+        type: 2}
+      propertyPath: monsterLimit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569379761792670, guid: f2a28b4b8bdd74c8fbc6827dd8cd813c,
+        type: 2}
+      propertyPath: monsterLimit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114110331137250110, guid: f2a28b4b8bdd74c8fbc6827dd8cd813c,
+        type: 2}
+      propertyPath: monsterLimit
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2a28b4b8bdd74c8fbc6827dd8cd813c, type: 2}
   m_IsPrefabParent: 0

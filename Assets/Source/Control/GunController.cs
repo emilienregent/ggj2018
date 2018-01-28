@@ -20,8 +20,11 @@ public class GunController : MonoBehaviour {
 
 	public Frequency gunFrequency;
 	public Camera gunOriginCamera;
+	public int currentDungeonId;
 
 	public float bulletDamage = 0f;
+	public bool isSpecial = false;
+
 
     // Use this for initialization
     private void Start () {
@@ -47,24 +50,27 @@ public class GunController : MonoBehaviour {
             if(shotCounter <= 0)
             {
                 shotCounter = timeBetweenShot;
-				Shoot ();
+				Shoot (isSpecial);
             }
         } else
         {
             shotCounter = 0;
         }
 	}
-
-	public void Shoot()
+		
+	public void Shoot(bool special = false)
 	{
 		for (int i = 0; i < firePoint.Length; i++)
 		{
 			BulletController newBullet = ActiveBullet ();
+			newBullet.special = special;
 			newBullet.originCamera = gunOriginCamera;
-
+			newBullet.currentDungeonId = currentDungeonId;
 			newBullet.transform.position = firePoint [i].position;
 			newBullet.transform.rotation = firePoint [i].rotation;
 		}
+
+		isSpecial = false;
 	}
 
 	public BulletController InstantiateNewBullet (BulletController prefab, Frequency frequency, Vector3 position, Quaternion rotation)

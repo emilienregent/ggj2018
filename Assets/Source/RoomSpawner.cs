@@ -67,11 +67,11 @@ public class RoomSpawner : MonoBehaviour, IFrequency
                 if(diffcheck <= 25.0f)
                 {   monsterMod = 1;}
                 else if(diffcheck < 45.0f)
-                { monsterMod = 10; }
+                { monsterMod = 3; }
                 else if (diffcheck < 65.0f)
-                { monsterMod = 20; }
+                { monsterMod = 6; }
                 else
-                { monsterMod = 30; }
+                { monsterMod = 9; }
 
                 if(monsterMod > oldmonsterMod)
                 {

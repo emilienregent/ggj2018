@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour, IFrequency {
 		gun.gunOriginCamera = playerCamera;
 		gun.gunFrequency = frequency;
 		gun.bulletDamage = damage;
+		gun.currentDungeonId = dungeon.id;
     }
 
     // Update is called once per frame
@@ -98,11 +99,15 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
         // FIRE
         bool previouslyFiring = gun.isFiring;
-        gun.isFiring = Input.GetButton("Player_" + _controllerId + "_Fire1");
-        if(previouslyFiring != gun.isFiring)
+        gun.isFiring = (
+		    Input.GetButtonDown ("Player_" + _controllerId + "_Fire1") ||
+		    Input.GetButtonDown ("Player_" + _controllerId + "_Fire4"));
+        if (previouslyFiring != gun.isFiring)
         {
             animControl.SetBool("Shoot", gun.isFiring);
         }
+
+        gun.isSpecial = Input.GetButtonDown ("Player_" + _controllerId + "_Fire4");
 
         // DASH
         if (Input.GetButtonDown("Player_" + _controllerId + "_Dash") && canDash)
@@ -178,10 +183,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
             dashDirection = new Vector3(Input.GetAxis("Player_" + _controllerId + "_Horizontal"), 0, Input.GetAxis("Player_" + _controllerId + "_Vertical"));
            
             _agent.speed *= dashSpeedMultiplicator;
-            _agent.acceleration *= dashAccelerationMultiplicator;
-            
-        }
-     
+            _agent.acceleration *= dashAccelerationMultiplicator;            
+        }     
     }
 
     private void UpdateDash() {

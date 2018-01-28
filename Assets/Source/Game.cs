@@ -27,6 +27,7 @@ public class Game : MonoBehaviour
     };
 
 	public float fullPoolHp = 0f;
+    public int LifePool = 6;
     public Canvas canvas = null;
     public GameObject warpFx = null;
 	public PlayerController[] players = null;
@@ -68,11 +69,14 @@ public class Game : MonoBehaviour
 
 	public void PlayerDead (PlayerController player)
 	{
-		fullPoolHp -= player.fullHp;
+        LifePool -= 1;
+        Debug.Log(LifePool);
+        //fullPoolHp -= player.fullHp;
 
-		if (fullPoolHp > 0f)
+		if (LifePool > 0f)
 		{
-			player.Resurect (resurectDelay);
+            ui_control.LoseLife(LifePool);
+            player.Resurect (resurectDelay);
 		}
 		else
         {

@@ -74,13 +74,13 @@ public class PlayerController : MonoBehaviour, IFrequency {
 			character = GameObject.Instantiate (characterModels [0], transform);
 			break;
 		case Frequency.Hz2:
-			character = GameObject.Instantiate (characterModels [0], transform);
+			character = GameObject.Instantiate (characterModels [1], transform);
 			break;
 		case Frequency.Hz3:
-			character = GameObject.Instantiate (characterModels [0], transform);
+			character = GameObject.Instantiate (characterModels [2], transform);
 			break;
 		case Frequency.Hz4:
-			character = GameObject.Instantiate (characterModels [0], transform);
+			character = GameObject.Instantiate (characterModels [3], transform);
 			break;
 		}
 

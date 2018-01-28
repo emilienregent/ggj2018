@@ -13,6 +13,8 @@ public class BulletController : MonoBehaviour {
 	public string hitTag = "";
 	public float damage = 0f;
 	public bool special = false;
+    private Game _game = null;
+    public bool isWarping = false;
 
     //public BulletController(GunController gun) {
     public void initParentGun(GunController gun) { 
@@ -21,8 +23,8 @@ public class BulletController : MonoBehaviour {
 
     // Use this for initialization
     private void Start () {
-		
-	}
+        _game = GameObject.FindObjectOfType<Game>();
+    }
 
     // Update is called once per frame
     private void FixedUpdate () {
@@ -36,18 +38,28 @@ public class BulletController : MonoBehaviour {
 			}
 			else
 			{
-				DirectionEnum direction = GameObject.FindObjectOfType<Game>().GetDirection(currentDungeonId, transform.position);
+				DirectionEnum direction = _game.GetDirection(currentDungeonId, transform.position);
 
-				if (direction != DirectionEnum.NONE)
-				{
-					int dungeonId = GameObject.FindObjectOfType<Game> ().GetDungeonId (currentDungeonId, direction);
-					Vector3 newPosition = GameObject.FindObjectOfType<Game> ().GetPosition (transform.position, direction, currentDungeonId, dungeonId);
-					
-					transform.position = newPosition;
-				}
-				else
-				{
-					parentGun.DisableBullet (this);
+                if (isWarping == true && direction == DirectionEnum.NONE)
+                {
+                    isWarping = false;
+                }
+                else if (isWarping == false && direction != DirectionEnum.NONE)
+                {
+                    if (_game.IsAvailableDirection(currentDungeonId, direction) == true)
+                    {
+                        int dungeonId = _game.GetDungeonId(currentDungeonId, direction);
+
+                        Vector3 newPosition = _game.GetPosition(transform.position, direction, currentDungeonId, dungeonId);
+
+                        transform.position = newPosition;
+
+                        isWarping = true;
+                    }
+                    else
+                    {
+                        parentGun.DisableBullet(this);
+                    }
 				}
 			}
         }

@@ -4,12 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UI_Control : MonoBehaviour {
+public class UI_Control : MonoBehaviour
+{
 
     public Image player1health;
     public Image player2health;
     public Image player3health;
     public Image player4health;
+
+    public GameObject LifeOne;
+    public GameObject LifeTwo;
+    public GameObject LifeThree;
+    public GameObject LifeFour;
+    public GameObject LifeFive;
+    public GameObject LifeSix;
+
     private PlayerController Player1;
     private PlayerController Player2;
     private PlayerController Player3;
@@ -27,12 +36,14 @@ public class UI_Control : MonoBehaviour {
     int num = 1;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if(Player1 != null)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Player1 != null)
         {
             p1hp = Player1.hp;
             p1hpMax = Player1.fullHp;
@@ -48,7 +59,7 @@ public class UI_Control : MonoBehaviour {
         {
             p3hp = Player3.hp;
             p1hpMax = Player3.fullHp;
-            player3health.fillAmount = p1hp / p3hpMax;
+            player3health.fillAmount = p3hp / p3hpMax;
         }
         if (Player4 != null)
         {
@@ -56,10 +67,11 @@ public class UI_Control : MonoBehaviour {
             p4hpMax = Player4.fullHp;
             player4health.fillAmount = p4hp / p4hpMax;
         }
+
     }
     public void registerPlayer(PlayerController Player)
     {
-        if(Player.playerId == 1)
+        if (Player.playerId == 1)
         {
             Player1 = Player;
         }
@@ -75,5 +87,29 @@ public class UI_Control : MonoBehaviour {
         {
             Player4 = Player;
         }
+    }
+    public void LoseLife(int i)
+    {
+        if (i == 5)
+        {
+            LifeOne.SetActive(false);
+        }
+        if (i == 4)
+        {
+            LifeTwo.SetActive(false);
+        }
+        if (i == 3)
+        {
+            LifeThree.SetActive(false);
+        }
+        if (i == 2)
+        {
+            LifeFour.SetActive(false);
+        }
+        if (i == 1)
+        {
+            LifeSix.SetActive(false);
+        }
+
     }
 }

@@ -61,9 +61,38 @@ public class PlayerController : MonoBehaviour, IFrequency {
     [SerializeField] private float hitCounter = 0;
     [SerializeField] private float healCounter = 0;
 
+	public GameObject[] characterModels = null;
+
     // Use this for initialization
 
     private void Start () {
+		GameObject character = null;
+
+		switch (frequency)
+		{
+		case Frequency.Hz1:
+			character = GameObject.Instantiate (characterModels [0], transform);
+			break;
+		case Frequency.Hz2:
+			character = GameObject.Instantiate (characterModels [0], transform);
+			break;
+		case Frequency.Hz3:
+			character = GameObject.Instantiate (characterModels [0], transform);
+			break;
+		case Frequency.Hz4:
+			character = GameObject.Instantiate (characterModels [0], transform);
+			break;
+		}
+
+		ColorBehaviour[] colors = character.GetComponentsInChildren<ColorBehaviour> ();
+		for (int i = 0; i < colors.Length; i++)
+			colors [i].SetFrequency (frequency);
+
+		character.transform.localPosition = Vector3.zero;
+		character.transform.localEulerAngles = Vector3.zero;
+
+		animControl = character.GetComponent<Animator> ();
+
 		_agent = GetComponent<NavMeshAgent> ();
         _agent.updateRotation = false;
         defaultSpeed = _agent.speed;

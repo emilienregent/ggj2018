@@ -2138,6 +2138,7 @@ MonoBehaviour:
   LifeFour: {fileID: 1350277733}
   LifeFive: {fileID: 2021313752}
   LifeSix: {fileID: 1729196028}
+  KillScore: {fileID: 0}
 --- !u!1 &1298972549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2397,6 +2398,11 @@ Prefab:
       propertyPath: game
       value: 
       objectReference: {fileID: 1704741453}
+    - target: {fileID: 114077851098849834, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: _frequency
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
   m_IsPrefabParent: 0
@@ -2589,7 +2595,7 @@ MonoBehaviour:
   - {fileID: 1298972551}
   - {fileID: 955001844}
   ui_control: {fileID: 1264339648}
-  resurectDelay: 0
+  resurectDelay: 3
 --- !u!4 &1704741454
 Transform:
   m_ObjectHideFlags: 0

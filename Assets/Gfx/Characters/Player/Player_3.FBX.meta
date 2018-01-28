@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3ffc1a7a697fd3a438c252eaa429323f
-timeCreated: 1517077645
+guid: 89d5582d154134b49b1e97e57453ba10
+timeCreated: 1517132521
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -35,12 +35,11 @@ ModelImporter:
     100054: Bip R UpperArm
     100056: Bip Spine
     100058: Bip Spine1
-    100060: Player
-    100062: Player_01
+    100060: Object001
+    100062: Player
     100064: //RootNode
-    100066: Weapon
-    100068: Wand
-    100070: Wand_Orb
+    100066: Rocket
+    100068: Rocket_Hat
     400000: Bip
     400002: Bip Footsteps
     400004: Bip Head
@@ -71,31 +70,26 @@ ModelImporter:
     400054: Bip R UpperArm
     400056: Bip Spine
     400058: Bip Spine1
-    400060: Player
-    400062: Player_01
+    400060: Object001
+    400062: Player
     400064: //RootNode
-    400066: Weapon
-    400068: Wand
-    400070: Wand_Orb
-    2100000: Player
-    2100002: No Name
-    2100004: Wand
-    2100006: Wand_Orb
-    2300000: Weapon
-    2300002: Wand
-    2300004: Wand_Orb
-    3300000: Weapon
-    3300002: Wand
-    3300004: Wand_Orb
+    400066: Rocket
+    400068: Rocket_Hat
+    2100000: Player_Pants
+    2100002: Player
+    2100004: Player_Leaves
+    2100006: Player_Eyes
+    2100008: Rocket
+    2100010: Rocket_Hat
+    2300000: Rocket
+    2300002: Rocket_Hat
+    3300000: Rocket
+    3300002: Rocket_Hat
     4300000: Player
-    4300002: Weapon
-    4300004: Player_01
-    4300006: Wand
-    4300008: Wand_Orb
-    7400000: Player_Shoot_Staff
+    4300002: Rocket
+    4300004: Rocket_Hat
     9500000: //RootNode
     13700000: Player
-    13700002: Player_01
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -122,35 +116,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Player_Shoot_Staff
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 10
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

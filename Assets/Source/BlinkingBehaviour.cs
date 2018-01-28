@@ -17,6 +17,7 @@ public class BlinkingBehaviour : MonoBehaviour
     public void StopBlink()
     {
         StopCoroutine("Blink");
+        EnableRenderers(true);
     }
 
     private IEnumerator Blink()

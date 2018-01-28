@@ -46,6 +46,16 @@ public class PlayerSelectionManager : MonoBehaviour {
                 count++;
         }
 
+        if (count != _playersReady && _playersReady > 1)
+        {
+            pressStart.gameObject.SetActive(true);
+
+            Debug.Log("Player 1 use controler : " + PlayerPrefs.GetInt("Player_1_controller"));
+            Debug.Log("Player 2 use controler : " + PlayerPrefs.GetInt("Player_2_controller"));
+            Debug.Log("Player 3 use controler : " + PlayerPrefs.GetInt("Player_3_controller"));
+            Debug.Log("Player 4 use controler : " + PlayerPrefs.GetInt("Player_4_controller"));
+        }
+
         _playersReady = count;
 
         if (Input.GetButtonDown("Submit"))
@@ -65,15 +75,6 @@ public class PlayerSelectionManager : MonoBehaviour {
                         if (PlayerPrefs.HasKey("Player_" + players[i].playerId + "_controller") == false)
                         {
                             SelectPlayer(players[i], i, joystickId);
-                            if (_playersReady > 1)
-                            {
-                                pressStart.gameObject.SetActive(true);
-
-                                Debug.Log("Player 1 use controler : " + PlayerPrefs.GetInt("Player_1_controller"));
-                                Debug.Log("Player 2 use controler : " + PlayerPrefs.GetInt("Player_2_controller"));
-                                Debug.Log("Player 3 use controler : " + PlayerPrefs.GetInt("Player_3_controller"));
-                                Debug.Log("Player 4 use controler : " + PlayerPrefs.GetInt("Player_4_controller"));
-                            }
                             break;
                         }
                         else if (PlayerPrefs.GetInt("Player_" + players[i].playerId + "_controller") == joystickId)
@@ -91,7 +92,7 @@ public class PlayerSelectionManager : MonoBehaviour {
         {
             if (_isTutorial == false)
             {
-                //tutorial.gameObject.SetActive(true);
+                tutorial.gameObject.SetActive(true);
                 _isTutorial = true;
             }
             else

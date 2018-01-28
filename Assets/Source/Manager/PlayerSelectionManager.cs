@@ -92,7 +92,7 @@ public class PlayerSelectionManager : MonoBehaviour {
             PlayerPrefs.Save();
         }
 
-        if((Input.GetButtonDown("JoystickStart") || Input.GetButtonDown("Submit")) && _playersReady > 1)
+        if(Input.GetButtonDown("JoystickStart") && _playersReady > 1)
         {
             if (_isTutorial == false)
             {

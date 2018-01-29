@@ -252,8 +252,8 @@ public class PlayerController : MonoBehaviour, IFrequency {
 
     // get input from right stick for the player rotation
     private void Rotate() {
-        Vector3 direction = Vector3.right * Input.GetAxisRaw("Player_" + _controllerId + "_RotationH") + Vector3.forward * -Input.GetAxisRaw("Player_" + _controllerId + "_RotationV");
-        if(direction.sqrMagnitude > 0.0f)
+        Vector3 direction = Vector3.right * Input.GetAxisRaw("Player_" + _controllerId + "_Horizontal") + Vector3.forward * Input.GetAxisRaw("Player_" + _controllerId + "_Vertical");
+        if(direction.sqrMagnitude > 0.2f)
         {
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }

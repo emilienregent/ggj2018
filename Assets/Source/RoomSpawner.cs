@@ -52,7 +52,7 @@ public class RoomSpawner : MonoBehaviour, IFrequency
 
 	public PatrolWaypoint[]		patrolPath		= null;
 
-    private int NeededKills = 1;
+    private int NeededKills = 60;
     public int CurrentKills = 0;
 
 	[SerializeField]

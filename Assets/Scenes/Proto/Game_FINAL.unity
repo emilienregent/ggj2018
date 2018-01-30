@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -364,6 +364,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
       propertyPath: m_LocalPosition.x
       value: -44.5
@@ -3011,6 +3026,146 @@ Prefab:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].cap
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].value
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].cap
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].cap
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].cap
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].cap
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].value
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].value
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[0].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].value
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].value
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114075726004002916, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869833065222938, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015887515520164, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114721939888353878, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
   m_IsPrefabParent: 0
@@ -3145,6 +3300,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
       propertyPath: m_LocalPosition.x
       value: -44.5
@@ -5792,6 +5962,141 @@ Prefab:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].cap
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].value
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].cap
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].cap
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].cap
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].value
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].cap
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].value
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[0].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].value
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].value
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015887515520164, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869833065222938, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114721939888353878, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114075726004002916, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
   m_IsPrefabParent: 0
@@ -5944,6 +6249,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
       propertyPath: m_LocalPosition.x
       value: -44.5
@@ -8591,6 +8911,141 @@ Prefab:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].cap
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].value
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].cap
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].cap
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].cap
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].value
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].cap
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].value
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[0].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].value
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].value
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114721939888353878, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869833065222938, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114075726004002916, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015887515520164, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
   m_IsPrefabParent: 0
@@ -9869,6 +10324,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4736304170612368, guid: ff87e517198e5c349abb12753df39935, type: 2}
       propertyPath: m_LocalPosition.x
       value: -44.5
@@ -12501,6 +12971,141 @@ Prefab:
     - target: {fileID: 1744516005452934, guid: ff87e517198e5c349abb12753df39935, type: 2}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[1].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[2].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].cap
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[3].value
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverTime.scales.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].cap
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].cap
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[2].value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].cap
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[3].value
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].cap
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterLimitOverKill.scales.Array.data[4].value
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].cap
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].cap
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].cap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[0].value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[1].value
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[2].value
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114999699426091044, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: monsterSpawnOverTime.scales.Array.data[3].value
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114075726004002916, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114721939888353878, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015887515520164, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869833065222938, guid: ff87e517198e5c349abb12753df39935,
+        type: 2}
+      propertyPath: pourcentToSpawnBadFrequency
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff87e517198e5c349abb12753df39935, type: 2}
